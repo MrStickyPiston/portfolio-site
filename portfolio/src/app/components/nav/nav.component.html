@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container dark-theme">
+<mat-sidenav-container class="sidenav-container" [class.dark-theme]="dark_mode">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'">
@@ -20,7 +20,7 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>portfolio</span>
+      <span>{{app_name}}</span>
 
       @if (!(isHandset$ | async)) {
         <div class="spacer"></div>
@@ -34,7 +34,11 @@
       }
     </mat-toolbar>
 
-    <router-outlet></router-outlet>
+    <div class="site-main">
+      <div class="site-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
 
     <div class="spacer"></div>
 

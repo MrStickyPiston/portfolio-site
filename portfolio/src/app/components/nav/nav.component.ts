@@ -33,6 +33,9 @@ import { FooterComponent } from "../footer/footer.component";
 export class NavComponent {
   private breakpointObserver = inject(BreakpointObserver);
   navpages = data.nav;
+  app_name = data.app_name
+
+  dark_mode = true;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
