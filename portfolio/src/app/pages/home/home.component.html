@@ -1,16 +1,59 @@
 <app-header></app-header>
 
 <div class="page-content">
-    <mat-card>
+    <mat-card class="content-block" id="more-info">
         <mat-card-header>
-            <img mat-card-avatar src="https://avatars.githubusercontent.com/u/97804691">
             <mat-card-title>Detailled information</mat-card-title>
             <mat-card-subtitle>About me and my software obsession</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti. Nullam condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel tincidunt lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus ut, pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit, scelerisque est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed
+            sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti. Nullam
+            condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel tincidunt
+            lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus ut,
+            pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit, scelerisque
+            est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
 
-    In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo iaculis sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis, tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
+            In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo iaculis
+            sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
+            tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis
+            porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
         </mat-card-content>
     </mat-card>
+
+    <div class="content-block wide">
+        <div class="projects-grid">
+
+            @for (project of projects; track $index) {
+
+            <mat-card class="project-card">
+
+                <mat-card-header class="project-header">
+                    <img mat-card-avatar [src]="project.icon">
+                    <mat-card-title>{{project.title}}</mat-card-title>
+                    <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <img mat-card-image [src]="project.banner" [alt]="project.banner_alt" class="project-image wide">
+
+                <mat-card-content>
+                    <p>{{project.text}}</p>
+                </mat-card-content>
+
+                <div class="spacer"></div>
+
+                <mat-card-actions>
+                    @for (button of project.buttons; track $index) {
+                        <a mat-stroked-button color="raised" [href]="button.url" target="_blank">
+                            <mat-icon>{{button.icon}}</mat-icon>
+                            {{button.text}}
+                        </a>
+                    }
+                </mat-card-actions>
+            </mat-card>
+
+            }
+        </div>
+    </div>
 </div>
