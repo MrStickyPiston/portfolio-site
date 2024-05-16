@@ -22,17 +22,17 @@
         </mat-card-content>
     </mat-card>
 
-    <div class="content-block wide">
+    <div class="content-block">
         <div class="projects-grid">
 
             @for (project of projects; track $index) {
 
             <mat-card class="project-card">
 
-                <mat-card-header class="project-header">
+                <mat-card-header>
                     <img mat-card-avatar [src]="project.icon">
                     <mat-card-title>{{project.title}}</mat-card-title>
-                    <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
+                    <mat-card-subtitle class="project-subtitle">{{project.subtitle}}</mat-card-subtitle>
                 </mat-card-header>
 
                 <img mat-card-image [src]="project.banner" [alt]="project.banner_alt" class="project-image wide">
