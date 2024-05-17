@@ -4,7 +4,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HeaderComponent } from "../../components/header/header.component";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { url } from 'node:inspector';
 
 @Component({
     selector: 'app-home',

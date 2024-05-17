@@ -4,6 +4,7 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { data } from '../../../environments/data';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-header',
@@ -26,10 +27,18 @@ import { data } from '../../../environments/data';
   ],
 })
 export class HeaderComponent {
+  
+  scrollTo: Function;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) { }
+    @Inject(PLATFORM_ID) private platformId: Object,
+    utilsService: UtilsService,
+  ) {
+    this.scrollTo = utilsService.scrollTo;
+  }
+
+  
+
 
   function = data.home.functions[0]
   functions = data.home.functions

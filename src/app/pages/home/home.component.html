@@ -1,10 +1,9 @@
 <app-header></app-header>
 
 <div class="page-content">
-    <mat-card class="content-block" id="more-info">
+    <mat-card class="content-block">
         <mat-card-header>
-            <mat-card-title>Detailled information</mat-card-title>
-            <mat-card-subtitle>About me and my software obsession</mat-card-subtitle>
+            <mat-card-title>Short description</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed
@@ -20,6 +19,12 @@
             inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis
             porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
         </mat-card-content>
+        <mat-card-actions>
+            <a mat-stroked-button>
+                <mat-icon>arrow_forward_ios</mat-icon>
+                Read more
+            </a>
+        </mat-card-actions>
     </mat-card>
 
     <div class="content-block">
@@ -45,7 +50,7 @@
 
                 <mat-card-actions>
                     @for (button of project.buttons; track $index) {
-                        <a mat-stroked-button color="raised" [href]="button.url" target="_blank">
+                        <a mat-stroked-button [href]="button.url" target="_blank">
                             <mat-icon>{{button.icon}}</mat-icon>
                             {{button.text}}
                         </a>
