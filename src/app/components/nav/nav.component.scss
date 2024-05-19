@@ -24,3 +24,14 @@ mat-sidenav-content {
   display: flex;
   flex-direction: column;
 }
+
+mat-toolbar {
+  min-height: 64px
+}
+
+
+@media (max-width: 600px) {
+  .mat-toolbar-single-row {
+    padding: 0;
+  }
+}

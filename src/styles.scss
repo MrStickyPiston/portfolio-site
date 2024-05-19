@@ -45,4 +45,16 @@ a+a {
 
 .spacer {
     flex: 1 1 auto;
-} 
+}
+
+@media (min-width: 600px) {
+    .m-only {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .d-only {
+        display: none !important;
+    }
+}

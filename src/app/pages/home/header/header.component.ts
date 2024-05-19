@@ -3,11 +3,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { data } from '../../../environments/data';
-import { UtilsService } from '../../services/utils.service';
+import { data } from '../../../../environments/data';
+import { UtilsService } from '../../../services/utils.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-home-header',
   standalone: true,
   imports: [
     MatButtonModule,

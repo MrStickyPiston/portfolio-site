@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from "./components/nav/nav.component";
 
@@ -13,9 +12,6 @@ import { NavComponent } from "./components/nav/nav.component";
         // Angular
         RouterOutlet,
         // Components
-        NavbarComponent,
-        // Material
-        MatCardModule,
         NavComponent
     ]
 })

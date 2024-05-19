@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container" [class.dark-theme]="dark_mode">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+      role="dialog"
+      mode="over">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       @for (page of navpages; track $index) {
@@ -11,19 +11,19 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      @if (isHandset$ | async) {
         <button
           type="button"
           aria-label="Toggle sidenav"
           mat-icon-button
+          class="m-only"
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-      }
       <span>{{app_name}}</span>
 
-      @if (!(isHandset$ | async)) {
-        <div class="spacer"></div>
+      <div class="spacer"></div>
+
+      <div class="d-only">
         @for (page of navpages; track $index) {
           <a mat-button 
             [routerLink]="page.route" 
@@ -31,7 +31,7 @@
             {{page.text}}
           </a>
         }
-      }
+      </div>
     </mat-toolbar>
 
     <div class="site-main">
