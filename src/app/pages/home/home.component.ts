@@ -22,7 +22,7 @@ export class HomeComponent {
     projects = [
         { 
             icon: 'https://www.fcbo.nl/favicon.ico',
-            title: 'Fotoclub Borger-Odoorn website',
+            title: 'Fotoclub Borger-Odoorn',
             subtitle: 'Frontend & backend for a dutch Photo club',
 
             banner: 'https://www.fcbo.nl/socialCard.png',
@@ -39,7 +39,7 @@ export class HomeComponent {
         },
         { 
             icon: 'https://raw.githubusercontent.com/StickyPiston-development/tgw-lib/gh-pages/images/icon.ico',
-            title: 'Typegreek Windows website & app',
+            title: 'Typegreek Windows',
             subtitle: 'Frontend & desktop app for a ancient Greek typing app',
 
             banner: 'https://github.com/StickyPiston-development/typegreek-windows/blob/gh-pages/public/playground_assets/helpmenu-1500w.png?raw=true',
@@ -66,7 +66,7 @@ export class HomeComponent {
         },
         { 
             icon: '/assets/CGBNvote_icon.png',
-            title: 'CGBNvote website',
+            title: 'CGBNvote',
             subtitle: 'Frontend & backend made for a school voting webapp',
 
             banner: '/assets/CGBNvote_banner.png',

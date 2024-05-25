@@ -3,7 +3,6 @@ export const data = {
     home: {
         functions: [
             "full-stack software engineer",
-            "open source enjoyer",
             "desktop app developer",
             "UI/UX designer"
         ]

@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 
 @import url('./theme.scss');
+@import url('./page_header.scss');
 
 html,
 body {
@@ -56,5 +57,42 @@ a+a {
 @media (max-width: 600px) {
     .d-only {
         display: none !important;
+    }
+}
+
+// Projects
+
+.wide {
+    width: 100%;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.project-card {
+
+    .project-image {
+        height: 25vh;
+        max-height: 400px;
+        object-fit: cover;
+        align-self: center;
+        margin-bottom: 16px;
+    }
+
+    .project-subtitle {
+        margin-bottom: 16px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: auto auto auto;
+    }
+
+    .project-image {
+        margin-top: 16px;
     }
 }
