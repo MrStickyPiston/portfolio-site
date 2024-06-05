@@ -4,16 +4,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { UtilsService } from '../../../services/utils.service';
 
 @Component({
-  selector: 'app-projects-header',
+  selector: 'app-about-header',
   standalone: true,
-  imports: [
-    MatIconModule,
-    MatButtonModule
-  ],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class AboutHeaderComponent {
   scrollTo: Function;
 
   constructor(
@@ -21,4 +18,5 @@ export class HeaderComponent {
   ){
     this.scrollTo = utilsService.scrollTo;
   }
+
 }

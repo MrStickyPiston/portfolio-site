@@ -56,11 +56,6 @@ export class HomeComponent {
                     icon: 'web',
                     text: 'Site',
                     url: 'https://stickypiston-development.github.io/typegreek-windows/',
-                },
-                {
-                    icon: 'install_desktop',
-                    text: 'App',
-                    url: 'https://github.com/StickyPiston-development/typegreek-windows/releases/latest/download/TypeGreek-installer.exe'
                 }
             ]
         },

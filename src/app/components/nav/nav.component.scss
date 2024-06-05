@@ -13,11 +13,7 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 2;
-}
-
-.active {
-  background-color: var();
+  z-index: 3;
 }
 
 mat-sidenav-content {
@@ -27,6 +23,10 @@ mat-sidenav-content {
 
 mat-toolbar {
   min-height: 64px
+}
+
+a+a {
+  margin-left: 0px;
 }
 
 

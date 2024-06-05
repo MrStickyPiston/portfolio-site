@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router, RouterOutlet, Scroll } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from "./components/nav/nav.component";
+import { filter } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-root',

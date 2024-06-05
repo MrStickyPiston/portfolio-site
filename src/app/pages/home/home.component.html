@@ -1,31 +1,35 @@
 <app-home-header></app-home-header>
 
 <div class="page-content">
-    <mat-card class="content-block">
-        <mat-card-content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed
-            sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti. Nullam
-            condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel tincidunt
-            lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus ut,
-            pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit, scelerisque
-            est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
-
-            In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo iaculis
-            sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
-            tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis
-            porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
-        </mat-card-content>
-        <mat-card-actions>
-            <a mat-stroked-button>
-                <mat-icon>arrow_forward_ios</mat-icon>
-                Read more
-            </a>
-        </mat-card-actions>
-    </mat-card>
 
     <div class="content-block">
-        <div class="projects-grid">
+
+        <h1>Top projects</h1>
+
+        <mat-card class="section">
+            <mat-card-content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed
+                sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti. Nullam
+                condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel tincidunt
+                lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus ut,
+                pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit, scelerisque
+                est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
+    
+                In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo iaculis
+                sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
+                tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis
+                porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-stroked-button routerLink="projects">
+                    <mat-icon>chevron_right</mat-icon>
+                    More projects
+                </a>
+            </mat-card-actions>
+        </mat-card>
+
+        <div class="projects-grid section">
 
             @for (project of projects; track $index) {
 
@@ -47,10 +51,10 @@
 
                 <mat-card-actions>
                     @for (button of project.buttons; track $index) {
-                        <a mat-stroked-button [href]="button.url" target="_blank">
-                            <mat-icon>{{button.icon}}</mat-icon>
-                            {{button.text}}
-                        </a>
+                    <a mat-stroked-button [href]="button.url" target="_blank">
+                        <mat-icon>{{button.icon}}</mat-icon>
+                        {{button.text}}
+                    </a>
                     }
                 </mat-card-actions>
             </mat-card>

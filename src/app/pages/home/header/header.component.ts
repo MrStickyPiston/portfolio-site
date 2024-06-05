@@ -30,14 +30,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   
-  scrollTo: Function;
-
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    utilsService: UtilsService,
-  ) {
-    this.scrollTo = utilsService.scrollTo;
-  }
+  ) {  }
 
   
 

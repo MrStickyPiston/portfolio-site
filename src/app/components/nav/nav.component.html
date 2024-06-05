@@ -2,7 +2,6 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       role="dialog"
       mode="over">
-    <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       @for (page of navpages; track $index) {
         <a mat-list-item [routerLink]="page.route">{{page.text}}</a>
