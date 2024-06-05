@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCard } from '@angular/material/card';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router, RouterModule } from '@angular/router';
 import { data } from '../../../environments/data';
 import { FooterComponent } from "../footer/footer.component";
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-nav',
@@ -33,4 +34,18 @@ export class NavComponent {
 
   dark_mode = true;
 
+  @ViewChild('sidenavContent', {read: MatSidenavContent}) sidenavContentScrollable!: MatSidenavContent;
+
+  constructor(private router: Router) {
+  }
+
+  ngAfterViewInit() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationStart))
+      .subscribe(() => {
+        setTimeout(() => {
+          this.sidenavContentScrollable!.scrollTo({top: 0, behavior: 'smooth'});
+        });
+      });
+  }
 }
