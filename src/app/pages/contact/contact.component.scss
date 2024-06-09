@@ -36,6 +36,10 @@ button+button {
         color: var(--mat-sidenav-content-text-color) !important;
     }
 
+    input {
+        caret-color: var(--mat-sidenav-content-text-color) !important;
+    }
+
     .mat-mdc-form-field-flex,
     .mat-mdc-text-field-wrapper,
     .mat-mdc-form-field-infix {
