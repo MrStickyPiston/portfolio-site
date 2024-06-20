@@ -3,7 +3,7 @@
 <div class="page-content">
 
     <div class="content-block">
-        <mat-stepper orientation="vertical">
+        <mat-stepper orientation="vertical" [linear]="true">
             <mat-step [stepControl]="nameFormGroup" label="Name">
                 <form [formGroup]="nameFormGroup">
 
