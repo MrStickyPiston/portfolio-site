@@ -1,18 +1,34 @@
-<app-home-header></app-home-header>
+import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
-<div class="page-content">
+@Component({
+  selector: 'app-testinominals',
+  standalone: true,
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
+  ],
+  templateUrl: './testinominals.component.html',
+  styleUrl: './testinominals.component.scss'
+})
+export class TestinominalsComponent {
+  
+  forward() {
+    throw new Error('Method not implemented.');
+  }
+  back() {
+    throw new Error('Method not implemented.');
+  }
 
-    <div class="content-block">
+  id = 0;
 
-        <h1>What people said about me</h1>
-
-        <app-testinominals class="section"></app-testinominals>
-
-        <h1>Top projects</h1>
-
-        <mat-card class="section">
-            <mat-card-content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non
+  items = [
+    {
+      name: "Fotoclub Borger-Odoorn",
+      description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non
                 sed
                 sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti.
                 Nullam
@@ -30,17 +46,7 @@
                 tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
                 inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at
                 turpis
-                porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
-            </mat-card-content>
-            <mat-card-actions>
-                <a mat-stroked-button routerLink="projects">
-                    <mat-icon>chevron_right</mat-icon>
-                    More projects
-                </a>
-            </mat-card-actions>
-        </mat-card>
-
-        <app-home-projects class="section"></app-home-projects>
-    
-    </div>
-</div>
+                porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.`
+    }
+  ]
+}

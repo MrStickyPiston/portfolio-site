@@ -1,0 +1,21 @@
+<div class="carousel">
+    <a mat-mini-fab color="secondary" (click)="back()">
+        <mat-icon>arrow_back_ios</mat-icon>
+    </a>
+
+    @for (item of items; track $index) {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <!-- <mat-card-subtitle>subtitle</mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+            {{item.description}}
+        </mat-card-content>
+    </mat-card>
+    }
+
+    <a mat-mini-fab color="secondary" (click)="forward()">
+        <mat-icon>arrow_forward_ios</mat-icon>
+    </a>
+</div>

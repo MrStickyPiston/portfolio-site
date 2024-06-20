@@ -1,0 +1,16 @@
+.carousel {
+    display: flex;
+    align-items: center;
+
+    .mdc-card {
+        width: 100%;
+        margin: 0 8px;
+    }
+}
+
+::ng-deep {
+    .mdc-fab {
+
+        border-radius: 8px !important;
+    }
+}
