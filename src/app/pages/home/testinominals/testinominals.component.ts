@@ -15,43 +15,75 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './testinominals.component.html',
   styleUrl: './testinominals.component.scss',
   animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('600ms ease-in')
+    trigger('movement', [
+      state('left', style({ transform: 'translateX(-5%)', opacity: 1 })),
+      state('right', style({ transform: 'translateX(5%)', opacity: 1 })),
+      transition('* => left', [
+        style({ transform: 'translateX(5%)', opacity: 0 }),
+        animate('500ms ease', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
-      transition(':leave', [
-        animate('600ms ease-out', style({ opacity: 0 }))
-      ])
-    ]),
-    trigger('slideIn', [
-      transition(':enter', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('300ms ease-in', style({ transform: 'translateX(0)' }))
-      ]),
-      transition(':leave', [
-        animate('300ms ease-out', style({ transform: 'translateX(-100%)' }))
+      transition('* => right', [
+        style({ transform: 'translateX(-5%)', opacity: 0 }),
+        animate('500ms ease', style({ transform: 'translateX(0)', opacity: 1 }))
       ])
     ])
   ]
 })
 export class TestinominalsComponent {
-  
-  forward() {
-    this.id ++;
 
-    if (this.id > this.items.length){
+  t!: NodeJS.Timeout;
+  animationActive: boolean = false;
+
+  forward() {
+    console.log('a')
+    console.log(this.animationActive)
+    if (this.animationActive) {
+      console.log('b')
+      return
+    }
+
+    this.animationActive = true
+    clearTimeout(this.t)
+
+    this.movement = ''
+    this.id++;
+
+    if (this.id >= this.items.length) {
       this.id = 0
     }
 
     this.item = this.items[this.id]
+    this.movement = 'right'
+    this.t = setTimeout(() => {
+      this.animationActive = false
+      this.movement = ''
+      console.log('r')
+    }, 500);
   }
+
   back() {
-    throw new Error('Method not implemented.');
+    if (this.animationActive) {
+      return
+    }
+
+    this.animationActive = true
+    clearTimeout(this.t)
+
+    this.movement = 'left';
+    this.t = setTimeout(() => {
+      this.animationActive = false
+      this.movement = ''
+      console.log('r')
+    }, 500);
+  }
+
+  resetAnimation() {
+
   }
 
   id = 0;
+
+  movement: string = '';
 
   items = [
     {

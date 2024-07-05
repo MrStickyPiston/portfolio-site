@@ -1,15 +1,10 @@
-.carousel {
-    display: flex;
-    align-items: center;
-
-    .mdc-card {
+.mdc-card {
         width: 100%;
-        margin: 0 8px;
-    }
 }
 
-.text-animation {
-    overflow: hidden;
+.mob-buttons {
+    display: flex;
+    margin-bottom: 8px;
 }
 
 ::ng-deep {

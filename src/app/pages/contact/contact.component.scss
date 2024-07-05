@@ -45,6 +45,14 @@ button+button {
     .mat-mdc-form-field-infix {
         height: 100%;
     }
+
+    .mat-step-icon-state-number {
+        color: black !important;
+    }
+    
+    .mat-step-icon-selected {
+        color: white !important;
+    }
 }
 
 #message-field {
