@@ -15,7 +15,9 @@
                         @case (itemType.Text) {
                             <p>{{item.text}}</p>
                         } @case (itemType.Images) {
-                            <p></p>
+                            @for (image of item.images; track $index) {
+                                <img [ngSrc]="image.url" priority [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw">
+                            }
                         } @case (itemType.Buttons) {
                             <div class="buttons-h">
                                 @for (button of item.buttons; track $index) {
@@ -46,9 +48,6 @@
 
 
         <h3>Showcase</h3>
-        @for (image of data.images; track $index){
-        <img [ngSrc]="image.url" priority [width]="image.width" [height]="image.height">
-        }
         <h2 id="usage">Usage</h2>
         <h2 id="faq">Frequently asked questions</h2>
 

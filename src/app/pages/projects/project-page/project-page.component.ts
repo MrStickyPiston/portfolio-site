@@ -21,12 +21,6 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './project-page.component.scss',
   providers: [
     provideCloudinaryLoader('https://res.cloudinary.com/dvtmkwimv/'),
-    {
-      provide: IMAGE_CONFIG,
-      useValue: {
-        breakpoints: [16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048]
-      }
-    },
   ]
 })
 
@@ -68,12 +62,6 @@ export class ProjectPageComponent {
         }
 
       ],
-      images: [{
-        url: 'StickyHours-screenshot-common_hours_menu',
-        alt: 'Sticky Hours android app icon, used as banner for the project page',
-        width: 3120,
-        height: 1440,
-      }],
       sections: [
         {
           name: 'About',
@@ -93,6 +81,21 @@ export class ProjectPageComponent {
                 {
                   type: ItemType.Text,
                   text: 'Open source helps improve the app as anyone can contribute fixes and features.'
+                },
+                {
+                  type: ItemType.Images,
+                  images: [{
+                    url: 'StickyHours-screenshot-common_hours_menu',
+                    alt: 'Sticky Hours android app icon, used as banner for the project page',
+                    width: 3120,
+                    height: 1440,
+                  },
+                  {
+                    url: 'StickyHours-screenshot-common_hours_menu',
+                    alt: 'Sticky Hours android app icon, used as banner for the project page',
+                    width: 3120,
+                    height: 1440,
+                  }]
                 }
               ]
             }
