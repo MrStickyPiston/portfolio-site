@@ -3,6 +3,11 @@
 @import url('./theme.scss');
 @import url('./page_header.scss');
 
+* {
+    scroll-margin-top: 100px;
+}
+
+
 html,
 body {
     height: 100%;

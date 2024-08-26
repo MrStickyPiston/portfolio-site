@@ -1,0 +1,56 @@
+<app-project-page-header [data]="data.header"></app-project-page-header>
+
+<div class="page-content">
+    <div class="content-block">
+
+        @for (section of data.sections; track $index) {
+            <h2>{{section.name}}</h2>
+            @for (subsection of section.subsections; track $index) {
+                @if (subsection.name) {
+                    <h3>{{subsection.name}}</h3>
+                }
+                @for (item of subsection.items; track $index) {
+                    @switch (item.type) {
+
+                        @case (itemType.Text) {
+                            <p>{{item.text}}</p>
+                        } @case (itemType.Images) {
+                            <p></p>
+                        } @case (itemType.Buttons) {
+                            <div class="buttons-h">
+                                @for (button of item.buttons; track $index) {
+                                    <a mat-flat-button color="primary" [href]="button.url">
+                                        {{button.text}}
+                                        <mat-icon>{{button.icon}}</mat-icon>
+                                    </a>
+                                }
+                            </div>
+                        } @case (itemType.Chips) {
+                            <mat-chip-set>
+                                @for (chip of item.chips; track $index) {
+                                    <mat-chip>{{chip}}</mat-chip>
+                                }
+                            </mat-chip-set>
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        <h2 id="download">Download</h2>
+        
+        <h2 id="features">Features</h2>
+        <h3>Platforms</h3>
+        <p>{{data.name}} is available for the platforms below.</p>
+
+
+        <h3>Showcase</h3>
+        @for (image of data.images; track $index){
+        <img [ngSrc]="image.url" priority [width]="image.width" [height]="image.height">
+        }
+        <h2 id="usage">Usage</h2>
+        <h2 id="faq">Frequently asked questions</h2>
+
+    </div>
+</div>

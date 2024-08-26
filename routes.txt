@@ -1,0 +1,5 @@
+/
+/about
+/projects
+/projects/sticky-hours
+/projects/contact

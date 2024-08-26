@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeProjectsComponent } from "./projects/projects.component";
 import { TestinominalsComponent } from "./testinominals/testinominals.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -17,7 +18,9 @@ import { TestinominalsComponent } from "./testinominals/testinominals.component"
         HeaderComponent,
         MatIconModule,
         HomeProjectsComponent,
-        TestinominalsComponent
+        TestinominalsComponent,
+        MatButtonModule,
+        RouterModule
     ]
 })
 export class HomeComponent {
