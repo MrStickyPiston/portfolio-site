@@ -6,8 +6,8 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const scrollConfig: InMemoryScrollingOptions = {
-  scrollPositionRestoration: 'enabled',
-  anchorScrolling: 'disabled',
+  scrollPositionRestoration: 'disabled',
+  anchorScrolling: 'enabled',
 };
 
 const inMemoryScrollingFeature: InMemoryScrollingFeature = withInMemoryScrolling(scrollConfig);

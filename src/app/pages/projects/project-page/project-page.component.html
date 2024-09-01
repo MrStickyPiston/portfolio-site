@@ -1,13 +1,16 @@
+@if (error_404) {
+    <app-e404></app-e404>
+} @else {
 <app-project-page-header [data]="data.header"></app-project-page-header>
 
 <div class="page-content">
     <div class="content-block">
 
         @for (section of data.sections; track $index) {
-            <h2>{{section.name}}</h2>
+            <h2 id="{{section.id}}">{{section.name}}</h2>
             @for (subsection of section.subsections; track $index) {
                 @if (subsection.name) {
-                    <h3>{{subsection.name}}</h3>
+                    <h3 id="{{subsection.id}}">{{subsection.name}}</h3>
                 }
                 @for (item of subsection.items; track $index) {
                     @switch (item.type) {
@@ -40,16 +43,6 @@
             }
         }
 
-        <h2 id="download">Download</h2>
-        
-        <h2 id="features">Features</h2>
-        <h3>Platforms</h3>
-        <p>{{data.name}} is available for the platforms below.</p>
-
-
-        <h3>Showcase</h3>
-        <h2 id="usage">Usage</h2>
-        <h2 id="faq">Frequently asked questions</h2>
-
     </div>
 </div>
+}

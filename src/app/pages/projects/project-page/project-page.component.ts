@@ -6,6 +6,7 @@ import { platform } from 'os';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { E404Component } from '../../error/e404/e404.component';
 
 @Component({
   selector: 'app-project-page',
@@ -15,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
     ProjectPageHeaderComponent,
     MatButtonModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    E404Component
   ],
   templateUrl: './project-page.component.html',
   styleUrl: './project-page.component.scss',
@@ -27,9 +29,11 @@ import { MatButtonModule } from '@angular/material/button';
 export class ProjectPageComponent {
 
   itemType: typeof ItemType = ItemType
-  
+
   projectId!: string;
   data!: any;
+
+  error_404: boolean = false
 
   constructor(private route: ActivatedRoute) { }
 
@@ -38,73 +42,86 @@ export class ProjectPageComponent {
       this.projectId = params['id'];
     });
 
-    this.data = {
-      header: {
-        title: "Sticky hours",
-        text: "A app for finding common free hours, allowing to use them for something usefull. build on top of the Zermelo api.",
-        buttons: [
+    if (this.projectId == "sticky-hours") {
+      this.data = {
+        header: {
+          title: "Sticky hours",
+          text: "A app for finding common free hours, allowing to use them for something usefull. build on top of the Zermelo api.",
+          buttons: [
 
-        ]
-      },
-      name: "Sticky Hours",
-      platforms: [
-        {
-          name: "Android",
-          url: ""
-        },
-        {
-          name: "Linux",
-          url: ""
-        }
-        , {
-          name: "Windows",
-          url: ""
-        }
-
-      ],
-      sections: [
-        {
-          name: 'About',
-          subsections: [
-            {
-              name: 'How it started',
-              items: [
-                {
-                  type: ItemType.Text, 
-                  text: 'When i got to the upper part of secondary school i got a lot of gaps in my schedule. Not 3-4 much, but at least 7 and even more if lessons were cancelled. This inspired me to making this app, that allows you to quick and easily access see your gaps for this and coming weeks. But the best is that the app allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, move a lesson if your whole class has a common gap (resulting in a later start or an earlyer end), or just do something fun in those otherwise lost hours'
-                }
-              ]
-            },
-            {
-              name: 'Open source',
-              items: [
-                {
-                  type: ItemType.Text,
-                  text: 'Open source helps improve the app as anyone can contribute fixes and features.'
-                },
-                {
-                  type: ItemType.Images,
-                  images: [{
-                    url: 'StickyHours-screenshot-common_hours_menu',
-                    alt: 'Sticky Hours android app icon, used as banner for the project page',
-                    width: 3120,
-                    height: 1440,
-                  },
-                  {
-                    url: 'StickyHours-screenshot-common_hours_menu',
-                    alt: 'Sticky Hours android app icon, used as banner for the project page',
-                    width: 3120,
-                    height: 1440,
-                  }]
-                }
-              ]
-            }
           ]
         },
-        {
-          name: 'Pig'
-        }
-      ]
+        name: "Sticky Hours",
+        sections: [
+          {
+            name: 'About',
+            id: 'about',
+            subsections: [
+              {
+                name: 'How it started',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'When i got to the upper part of secondary school i got a lot of gaps in my schedule. Not 3-4 much, but at least 7 and even more if lessons were cancelled. This inspired me to making this app, that allows you to quick and easily access see your gaps for this and coming weeks. But the best is that the app allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, move a lesson if your whole class has a common gap (resulting in a later start or an earlyer end), or just do something fun in those otherwise lost hours'
+                  }
+                ]
+              },
+              {
+                name: 'Open source',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'Open source helps improve the app as anyone can contribute fixes and features.'
+                  },
+                  {
+                    type: ItemType.Images,
+                    images: [{
+                      url: 'StickyHours-screenshot-common_hours_menu',
+                      alt: 'Sticky Hours android app icon, used as banner for the project page',
+                      width: 3120,
+                      height: 1440,
+                    },
+                    {
+                      url: 'StickyHours-screenshot-common_hours_menu',
+                      alt: 'Sticky Hours android app icon, used as banner for the project page',
+                      width: 3120,
+                      height: 1440,
+                    }]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'Frequently asked questions',
+            id: 'faq',
+            subsections: [
+              {
+                name: 'What is my Zermelo portal id?',
+                id: 'faq-zermelo-portal-id',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'A Zermelo portal id is the id Zermelo provided to your school to access their web portal. Knowing this, you can find your Zermelo portal id by going to your school`s web portal, and looking at the url in your browsers url field. The Zermelo portal id is the value between "https://" and ".zportal.nl". For example, if the link is "https://sticky-hours.zportal.nl/app", the portal id would be "sticky-hours". If you don\'t know the url of your school`s Zermelo portal, look on the site of your school, or ask your school.'
+                  }
+                ]
+              },
+              {
+                name: 'How do i get a linkcode for logging in?',
+                id: 'faq-zermelo-get-linkcode-for-login',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'You can get a link code for logging in (linking the Sticky Hours app to Zermelo) by logging in at your school`s web portal and going to the settings. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    } else {
+      this.error_404 = true
     }
   }
 
