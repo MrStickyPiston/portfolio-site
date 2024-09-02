@@ -6,7 +6,7 @@ import { MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCard } from '@angular/material/card';
-import { NavigationEnd, NavigationStart, Router, RouterModule } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router, RouterEvent, RouterModule } from '@angular/router';
 import { data } from '../../../environments/data';
 import { FooterComponent } from "../footer/footer.component";
 import { filter } from 'rxjs';
@@ -44,7 +44,18 @@ export class NavComponent {
       .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationStart))
       .subscribe(() => {
         setTimeout(() => {
-          this.sidenavContentScrollable!.scrollTo({top: 0, behavior: 'smooth'});
+          const url = this.router.url;
+          const anchorIndex = url.indexOf('#');
+          
+            const anchor = url.substring(anchorIndex + 1);
+            const element = document.getElementById(anchor);
+            
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' })
+            } 
+           else {
+            this.sidenavContentScrollable.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         });
       });
   }
