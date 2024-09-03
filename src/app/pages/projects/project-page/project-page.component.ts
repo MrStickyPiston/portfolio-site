@@ -97,6 +97,16 @@ export class ProjectPageComponent {
             id: 'faq',
             subsections: [
               {
+                name: 'How can i log in?',
+                id: 'faq-how-to-log-in',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'When you open the app for the first time, you will see a login screen. The Sticky Hours app gets your schedule data from your schools Zermelo portal. To link the app to Zermelo, only your Zermelo portal id and linkcode are needed. See below for more information on how to do this.'
+                  }
+                ]
+              },
+              {
                 name: 'What is my Zermelo portal id?',
                 id: 'faq-zermelo-portal-id',
                 items: [
