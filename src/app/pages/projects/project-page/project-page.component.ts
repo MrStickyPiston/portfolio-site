@@ -112,17 +112,17 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'A Zermelo portal id is the id Zermelo provided to your school to access their web portal. Knowing this, you can find your Zermelo portal id by going to your school`s web portal, and looking at the url in your browsers url field. The Zermelo portal id is the value between "https://" and ".zportal.nl". For example, if the link is "https://sticky-hours.zportal.nl/app", the portal id would be "sticky-hours". If you don\'t know the url of your school`s Zermelo portal, look on the site of your school, or ask your school.'
+                    text: 'A Zermelo portal id is assigned to your school if your school uses Zermelo. You can find it by going to your school`s web portal, and looking at the url in your browsers url field. The Zermelo portal id is the value between "https://" and ".zportal.nl". For example, if the link is "https://sticky-hours.zportal.nl/app", the portal id would be "sticky-hours". If you don\'t know the url of your school`s Zermelo portal, look on the site of your school, or ask your school.'
                   }
                 ]
               },
               {
-                name: 'How do i get a linkcode for logging in?',
+                name: 'How do i get a linkcode?',
                 id: 'faq-zermelo-get-linkcode-for-login',
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'You can get a link code for logging in (linking the Sticky Hours app to Zermelo) by logging in at your school`s web portal and going to the settings. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
+                    text: 'Link codes are optainable through the Zermelo web portal of your school. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
                   }
                 ]
               }
