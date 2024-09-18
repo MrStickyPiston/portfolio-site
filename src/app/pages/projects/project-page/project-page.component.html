@@ -8,9 +8,10 @@
 
         @for (section of data.sections; track $index) {
             <h2 id="{{section.id}}">{{section.name}}</h2>
+            <div class="section-box">
             @for (subsection of section.subsections; track $index) {
                 @if (subsection.name) {
-                    <h3 id="{{subsection.id}}">{{subsection.name}}</h3>
+                    <h3 id="{{subsection.id}}" class="subsection-header">{{subsection.name}}</h3>
                 }
                 @for (item of subsection.items; track $index) {
                     @switch (item.type) {
@@ -18,9 +19,13 @@
                         @case (itemType.Text) {
                             <p>{{item.text}}</p>
                         } @case (itemType.Images) {
+                            <div class="image-container">
                             @for (image of item.images; track $index) {
-                                <img [ngSrc]="image.url" priority [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw">
+                                
+                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="200vw">
+                                
                             }
+                            </div>
                         } @case (itemType.Buttons) {
                             <div class="buttons-h">
                                 @for (button of item.buttons; track $index) {
@@ -41,6 +46,7 @@
                 }
                 
             }
+            </div>
         }
 
     </div>
