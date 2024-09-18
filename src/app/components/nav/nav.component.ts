@@ -52,10 +52,13 @@ export class NavComponent {
             
             if (element) {
               element.scrollIntoView({ behavior: 'smooth' })
+
+              history.replaceState(null, '', window.location.href.split('#')[0]);
             } 
-           else {
-            this.sidenavContentScrollable.scrollTo({ top: 0, behavior: 'smooth' });
-          }
+            else {
+              this.sidenavContentScrollable.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
         });
       });
   }

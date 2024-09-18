@@ -29,9 +29,12 @@
                         } @case (itemType.Buttons) {
                             <div class="buttons-h">
                                 @for (button of item.buttons; track $index) {
-                                    <a mat-flat-button color="primary" [href]="button.url">
+                                    <a mat-flat-button color="secondary" [href]="button.url" target="_blank">
                                         {{button.text}}
+
+                                        @if (button.icon) {
                                         <mat-icon>{{button.icon}}</mat-icon>
+                                        }
                                     </a>
                                 }
                             </div>

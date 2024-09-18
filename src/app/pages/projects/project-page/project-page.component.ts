@@ -58,7 +58,7 @@ export class ProjectPageComponent {
             id: 'about',
             subsections: [
               {
-                name: 'Why i developed Sticky Hours',
+                name: 'Inspiration',
                 items: [
                   {
                     type: ItemType.Text,
@@ -66,6 +66,25 @@ export class ProjectPageComponent {
                   }
                 ]
               },
+              {
+                name: 'Developers',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: "Sticky Hours was developed primarily by MrStickyPiston (mr.sticky.piston@gmail.com). No contributions to the code have been made by other people yet. If you want to contribute, see the link to github below."
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
+                        text: 'Github',
+                        icon: 'code'
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
@@ -110,6 +129,33 @@ export class ProjectPageComponent {
                     type: ItemType.Buttons
                   }
                 ]
+              }
+            ]
+          },
+          {
+            name: 'Download',
+            id: 'download',
+            subsections: [
+              {
+                name: 'Android',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The stable android version of Sticky Hours can be downloaded directly from the play store. If you want to test out a development build, download the App-Android zip file from github actions.'
+                  }
+                ]
+              },
+              {
+                name: 'Windows'
+              },
+              {
+                name: 'MacOS'
+              },
+              {
+                name: 'Linux'
+              },
+              {
+                name: 'iOS'
               }
             ]
           },
