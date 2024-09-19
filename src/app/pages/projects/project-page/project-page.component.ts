@@ -71,15 +71,34 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: "Sticky Hours was developed primarily by MrStickyPiston (mr.sticky.piston@gmail.com). No contributions to the code have been made by other people yet. If you want to contribute, see the link to github below."
+                    text: "Sticky Hours was developed primarily by MrStickyPiston (mr.sticky.piston@gmail.com). No contributions to the code have been made by other people yet. If you want to contribute, see the link to the source code on github below."
+                  }
+                ]
+              },
+              {
+                name: 'Source code',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The app was build with the OSS (Open Source Software) principles in mind and licensed under MIT. Open source means that everyone can view and improve the projects code, leading to non-profit community driven development. Because nobody is looking for an app with ads and tracking, no ads or tracking will be implemented ever, and everyone is allowed to use the app free of cost. If you are interested in the project and like to see something added, create an issue on the projects issue tracker linked below. If you have experience with coding in python you can also try to fork the project and add it yourself. If you think others are also interested in your feature, you can create a pull request. If you are interested in OSS in general, visit wikipedia.'
                   },
                   {
                     type: ItemType.Buttons,
                     buttons: [
                       {
                         url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
-                        text: 'Github',
+                        text: 'Source code',
                         icon: 'code'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/issues',
+                        text: 'Issue tracker',
+                        icon: 'adjust'
+                      },
+                      {
+                        url: 'https://en.wikipedia.org/wiki/Open-source_software',
+                        text: 'OSS - Wikipedia',
+                        icon: 'book'
                       }
                     ]
                   }
@@ -114,7 +133,7 @@ export class ProjectPageComponent {
                       width: 3120,
                       height: 1440,
                     }
-                  ]
+                    ]
                   }
                 ]
               },
@@ -126,36 +145,116 @@ export class ProjectPageComponent {
                     text: 'Open source helps improve the app as anyone can contribute fixes and features.'
                   },
                   {
-                    type: ItemType.Buttons
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
+                        text: 'Source code',
+                        icon: 'code'
+                      }
+                    ]
                   }
                 ]
               }
             ]
           },
           {
-            name: 'Download',
-            id: 'download',
+            name: 'Downloads',
+            id: 'downloads',
+            subsections: [
+              {
+                name: 'Stable',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'A fully tested and stable version of Sticky Hours, good for regular usage. If you dont know what version you should pick, use this one. Please select your platform below proceed to the installation guide.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://play.google.com/store/apps/details?id=dev.mrstickypiston.stickyhours',
+                        text: 'Android',
+                        icon: 'android'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Windows.zip',
+                        text: 'Windows',
+                        icon: 'desktop_windows'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-macOS.zip',
+                        text: 'MacOS',
+                        icon: 'desktop_mac'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Flatpak.zip',
+                        text: 'Linux Flatpak',
+                        icon: 'lock'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
+                        text: 'Ubuntu 24.04 LTS',
+                        icon: 'computer'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Fedora-40.zip',
+                        text: 'Fedora 40',
+                        icon: 'computer'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: 'Nigthly build',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'A nightly build for Sticky Hours is available on github actions. This build will contain the newest features, but is not (properly) tested and still in development. Only use this version if you want to test the app or try out new features before they are realeased, but know what you are doing. Report any issues you encounter on the issue tracker on the github page. Because of apple requiring you to build iOS apps on a physical computer running Xcode i will not be providing nightly iOS builds. Please build the code from source yourself if you want to test out the iOS version.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'Installation',
+            id: 'installation',
             subsections: [
               {
                 name: 'Android',
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'The stable android version of Sticky Hours can be downloaded directly from the play store. If you want to test out a development build, download the App-Android zip file from github actions.'
+                    text: 'First, download the app from the play store.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://play.google.com/store/apps/details?id=dev.mrstickypiston.stickyhours',
+                        text: 'Google Play',
+                        icon: 'install_mobile'
+                      }
+                    ]
+                  },
+                  {
+                    type: ItemType.Text,
+                    text: 'After that, '
                   }
                 ]
               },
               {
-                name: 'Windows'
+                name: 'Windows setup'
               },
               {
-                name: 'MacOS'
+                name: 'MacOS setup'
               },
               {
-                name: 'Linux'
+                name: 'Linux setup'
               },
               {
-                name: 'iOS'
+                name: 'iOS setup'
               }
             ]
           },
