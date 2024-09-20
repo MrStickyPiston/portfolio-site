@@ -111,29 +111,46 @@ export class ProjectPageComponent {
             id: 'features',
             subsections: [
               {
-                name: 'Finding gaps in schedules'
+                name: 'Quickly finding (common) gaps in schedules',
+                items: 'The Sticky Hours app allows you to check your own schedule for gaps and even check which gaps overlap with other people.'
               },
               {
-                name: 'Always up to date schedule data'
-              },
-              {
-                name: 'Computing common gaps'
-              },
-              {
-                name: 'Cross platform support'
-              },
-              {
-                name: 'Easy to use interface',
+                name: 'Always up to date schedule data',
                 items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'Schedule data is fetched from Zermelo directly every time you use the app, ensuring your schedule gaps are never outdated.'
+                  }
+                ]
+              },
+              {
+                name: 'Many platforms, many looks, same functionality',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The app is available for Android, Windows, MacOS and Linux (Flatpak, Ubuntu, Fedora) allowing you to check your gaps always and everywhere. Sticky Hours uses the same codebase for every platform but with native UI elements, resulting in a streamlined uniform experience that blends in good with other apps.'
+                  },
                   {
                     type: ItemType.Images,
                     images: [
                       {
-                      url: 'StickyHours-screenshot-common_hours_menu',
-                      alt: 'Sticky Hours android app icon, used as banner for the project page',
-                      width: 3120,
-                      height: 1440,
-                    }
+                        url: 'StickyHours-screenshot-windows-common_hours_menu',
+                        alt: 'Sticky Hours Windows app main menu dutch light mode',
+                        width: 642,
+                        height: 512
+                      },
+                      {
+                        url: 'StickyHours-screenshot-android-common_hours_menu',
+                        alt: 'Sticky Hours android app main menu oriented landscape english light mode',
+                        width: 3120,
+                        height: 1440,
+                      },
+                      {
+                        url: 'StickyHours-screenshot-linux-common_hours_menu',
+                        alt: 'Sticky Hours Linux app main menu english dark mode round theme',
+                        width: 646,
+                        height: 521
+                      },
                     ]
                   }
                 ]
@@ -217,36 +234,55 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'First, download the app from the play store.'
-                  },
-                  {
-                    type: ItemType.Buttons,
-                    buttons: [
-                      {
-                        url: 'https://play.google.com/store/apps/details?id=dev.mrstickypiston.stickyhours',
-                        text: 'Google Play',
-                        icon: 'install_mobile'
-                      }
-                    ]
-                  },
-                  {
-                    type: ItemType.Text,
-                    text: 'After that, '
+                    text: 'First, download the app from the play store using the "Stable/Android" download link in the "Downloads" section above. After that, open the Sticky Hours app. You will see the login screen. Fill in your Zermelo instance id and linkcode from the portal (NOT username and password), and press log in. After that you will be logged in and can start finding common gaps in your and others schedules. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
                   }
                 ]
               },
               {
-                name: 'Windows setup'
+                name: 'Windows',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The StickyHours app for Windows is packaged as an .msi installer in a zip file, and supports 64 bit Windows 10 and 11. Please download the latest stable Windows version of the app from the Download section above. Save the zip file in your downloads folder and extract the .msi file. Then, run the msi file. It will let you choose between user installation and system wide installation. If you want more people one this computer to use the program than just you, choose system wide. Do note that this option requires admin rights though. Click install after that. The installer will take a few seconds to half a minute to install Sticky Hours depending on your device. Once the installer says it is done click finish. The app is installed on your computer now and accessible via the start menu. When you open the app you will see the login screen. To log in, enter your Zermelo instance id and linkcode (NOT your username or password), and press log in. After that you will be logged in. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
+                  }
+                ]
               },
               {
-                name: 'MacOS setup'
+                name: 'MacOS',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'On MacOS you can install Sticky Hours by downloading the .dmg installer from the download section above. Use the Stable MacOS version, and save the file to your Downloads folder. While the .dmg file is zipped, safari automatically unzips files it downloads. If you are not using safari you must unzip the file manually before proceeding. Once you have done that, open the location of the file in finder, and right click it. In the context menu, select "open". A modal will pop up now, telling you apple could not verify the devloper of the file. Apple will show this warning when opening any software that was not paid for 100$/year to Apple. Luckily, you can just click "open" and ignore them.'
+                  },
+                  {
+                    type: ItemType.Text,
+                    text: 'Once you click "open" the .dmg file will open and you can now drag the Sticky Hours app to your Applications folder, just like any other app for MacOS. After that you can open the app by opening Launchpad  and searching for "Sticky Hours". When you start the app for the first time you will get a popup again. This time because "Sticky Hours is an app that was downloaded from the internet". And again the solution is to just click "open". And that\'s it, you have installed the Sticky Hours app on MacOS! Enter your zermelo portal id and linkcode to login. (NOT your password or username). If you don\'t know what to enter or how to use the app, see the "Frequently asked questions" below.'
+                  }
+                ]
               },
               {
-                name: 'Linux setup'
+                name: 'iOS',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'Unfortunately iOS requires apps to pay 100 USD yearly to even build a production ready .ipa (iOS app installation bundle), so no official release build is provided. However, you can try building the app yourself for your own iPhone or iPad.'
+                  }
+                ]
               },
               {
-                name: 'iOS setup'
-              }
+                name: 'Linux',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'On Linux you can install Sticky Hours sandboxed using flatpak and using Ubuntu/Fedora system packages. Please pick the package you want to use and download it from the download section above. Install the package using your package manager and open the app. You will see the login screen, where you can enter your Zermelo portal id and linkcode (NOT your username and password). For instructions on how to find your Zermelo portal id or linkcode, see the FaQ below.'
+                  },
+                  {
+                    type: ItemType.Text,
+                    text: 'Do note that if you installed Sticky Hours using flatpak it may be a good idea to run "sudo flatpak override --filesystem=xdg-config/gtk-3.0" to allow flatpak to use your theme.'
+                  }
+                ]
+              },
+
             ]
           },
           {
