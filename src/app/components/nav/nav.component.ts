@@ -41,7 +41,7 @@ export class NavComponent {
 
   ngAfterViewInit() {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationStart))
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         setTimeout(() => {
           const url = this.router.url;

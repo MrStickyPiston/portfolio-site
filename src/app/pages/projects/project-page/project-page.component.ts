@@ -127,7 +127,8 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Images,
-                    images: [{
+                    images: [
+                      {
                       url: 'StickyHours-screenshot-common_hours_menu',
                       alt: 'Sticky Hours android app icon, used as banner for the project page',
                       width: 3120,
@@ -142,17 +143,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'Open source helps improve the app as anyone can contribute fixes and features.'
-                  },
-                  {
-                    type: ItemType.Buttons,
-                    buttons: [
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
-                        text: 'Source code',
-                        icon: 'code'
-                      }
-                    ]
+                    text: 'Sticky Hours is open source under the MIT license. Open source helps improve the app as anyone can contribute fixes and features. See about -> open source above for more information about open source.'
                   }
                 ]
               }
