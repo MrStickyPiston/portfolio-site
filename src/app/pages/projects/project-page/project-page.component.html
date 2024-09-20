@@ -7,48 +7,55 @@
     <div class="content-block">
 
         @for (section of data.sections; track $index) {
-            <h2 id="{{section.id}}">{{section.name}}</h2>
+            
             <div class="section-box">
-            @for (subsection of section.subsections; track $index) {
-                @if (subsection.name) {
-                    <h3 id="{{subsection.id}}" class="subsection-header">{{subsection.name}}</h3>
-                }
-                @for (item of subsection.items; track $index) {
-                    @switch (item.type) {
+            <h2 id="{{section.id}}">{{section.name}}</h2>
 
-                        @case (itemType.Text) {
-                            <p>{{item.text}}</p>
-                        } @case (itemType.Images) {
-                            <div class="image-container">
-                            @for (image of item.images; track $index) {
-                                
-                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw">
-                                
+                @for (subsection of section.subsections; track $index) {
+                    <div class="subsection-box">
+
+                        @if (subsection.name) {
+                            <h3 id="{{subsection.id}}" class="subsection-header">{{subsection.name}}</h3>
+                        }
+
+                        @for (item of subsection.items; track $index) {
+                            <div class="item-box">
+                            @switch (item.type) {
+
+                                @case (itemType.Text) {
+                                    <p>{{item.text}}</p>
+                                } @case (itemType.Images) {
+                                    <div class="image-container">
+                                    @for (image of item.images; track $index) {
+                                        
+                                            <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw">
+                                        
+                                    }
+                                    </div>
+                                } @case (itemType.Buttons) {
+                                    <div class="buttons-box">
+                                        @for (button of item.buttons; track $index) {
+                                            <a mat-flat-button color="secondary" [href]="button.url" target="_blank">
+                                                {{button.text}}
+
+                                                @if (button.icon) {
+                                                <mat-icon>{{button.icon}}</mat-icon>
+                                                }
+                                            </a>
+                                        }
+                                    </div>
+                                } @case (itemType.Chips) {
+                                    <mat-chip-set>
+                                        @for (chip of item.chips; track $index) {
+                                            <mat-chip>{{chip}}</mat-chip>
+                                        }
+                                    </mat-chip-set>
+                                }
                             }
                             </div>
-                        } @case (itemType.Buttons) {
-                            <div class="buttons-h">
-                                @for (button of item.buttons; track $index) {
-                                    <a mat-flat-button color="secondary" [href]="button.url" target="_blank">
-                                        {{button.text}}
-
-                                        @if (button.icon) {
-                                        <mat-icon>{{button.icon}}</mat-icon>
-                                        }
-                                    </a>
-                                }
-                            </div>
-                        } @case (itemType.Chips) {
-                            <mat-chip-set>
-                                @for (chip of item.chips; track $index) {
-                                    <mat-chip>{{chip}}</mat-chip>
-                                }
-                            </mat-chip-set>
                         }
-                    }
+                    </div>
                 }
-                
-            }
             </div>
         }
 

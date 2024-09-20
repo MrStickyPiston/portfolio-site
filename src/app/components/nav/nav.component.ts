@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AsyncPipe, isPlatformServer } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
@@ -36,7 +36,10 @@ export class NavComponent {
 
   @ViewChild('sidenavContent', {read: MatSidenavContent}) sidenavContentScrollable!: MatSidenavContent;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
   }
 
   ngAfterViewInit() {
@@ -44,6 +47,9 @@ export class NavComponent {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         setTimeout(() => {
+          if (isPlatformServer(this.platformId)) {
+            return
+          }
           const url = this.router.url;
           const anchorIndex = url.indexOf('#');
           

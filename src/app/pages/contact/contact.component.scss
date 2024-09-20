@@ -47,7 +47,7 @@ button+button {
     }
 
     .mat-step-icon-state-number {
-        color: black !important;
+        color: var(--mat-sidenav-content-background-color) !important;  
     }
     
     .mat-step-icon-selected {

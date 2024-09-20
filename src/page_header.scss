@@ -34,6 +34,10 @@ header {
         a {
             margin-bottom: 8px;
         }
+
+        a + a {
+            margin-left: 8px;
+        }
     }
 }
 
