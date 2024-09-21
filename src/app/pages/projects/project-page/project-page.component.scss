@@ -1,17 +1,22 @@
 .image-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(640px, 100%), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: start;
+  align-items: stretch;
   gap: 10px;
-  box-sizing: border-box;
+
   margin-bottom: 8px;
 }
 
 .image-container img {
-  max-width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 4px;
   display: block;
+  max-width: 100%;  
+  width: max(calc(50% - 10px), 620px);
+  flex-grow: 1;
 }
 
 .section-box {

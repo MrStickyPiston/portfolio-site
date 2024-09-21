@@ -103,6 +103,35 @@ export class ProjectPageComponent {
                     ]
                   }
                 ]
+              },
+              {
+                name: 'Technical details',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The app is written in Python 3.12 with as main goal doing the same thing on every device. For the ui, the cross platform native UI framework Toga by the BeeWare project was used. This allowed building the app\'s interface with platform native elements reusing the same code for every platform, reducing the amount of platform dependent bugs. For packaging the app another tool of the BeeWare project was used, Briefcase. Briefcase allows to package any Python project as an app for most platforms. To learn more about Toga, Briefcase or the BeeWare project, use the links below.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://beeware.org/project/projects/libraries/toga/',
+                        text: 'Toga',
+                        icon: 'book'
+                      },
+                      {
+                        url: 'https://beeware.org/project/projects/tools/briefcase/',
+                        text: 'Briefcase',
+                        icon: 'book'
+                      },
+                      {
+                        url: 'https://beeware.org/',
+                        text: 'BeeWare',
+                        icon: 'book'
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -124,7 +153,7 @@ export class ProjectPageComponent {
                 ]
               },
               {
-                name: 'Many platforms, many looks, same functionality',
+                name: 'Familiar looks, consistent functionality',
                 items: [
                   {
                     type: ItemType.Text,
@@ -140,16 +169,16 @@ export class ProjectPageComponent {
                         height: 512
                       },
                       {
-                        url: 'StickyHours-screenshot-android-common_hours_menu',
-                        alt: 'Sticky Hours android app main menu oriented landscape english light mode',
-                        width: 3120,
-                        height: 1440,
-                      },
-                      {
                         url: 'StickyHours-screenshot-linux-common_hours_menu',
                         alt: 'Sticky Hours Linux app main menu english dark mode round theme',
                         width: 646,
                         height: 521
+                      },
+                      {
+                        url: 'StickyHours-screenshot-android-common_hours_menu',
+                        alt: 'Sticky Hours android app main menu oriented landscape english light mode',
+                        width: 3120,
+                        height: 1440,
                       },
                     ]
                   }
