@@ -141,7 +141,12 @@ export class ProjectPageComponent {
             subsections: [
               {
                 name: 'Quickly finding (common) gaps in schedules',
-                items: 'The Sticky Hours app allows you to check your own schedule for gaps and even check which gaps overlap with other people.'
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The Sticky Hours app allows you to check your own schedule for gaps and even check which gaps overlap with other people.',
+                  }
+                ]
               },
               {
                 name: 'Always up to date schedule data',
