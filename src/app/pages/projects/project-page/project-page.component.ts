@@ -326,7 +326,7 @@ export class ProjectPageComponent {
                   },
                   {
                     type: ItemType.Text,
-                    text: 'Do note that if you installed Sticky Hours using flatpak it may be a good idea to run "sudo flatpak override --filesystem=xdg-config/gtk-3.0" to allow flatpak to use your theme.'
+                    text: 'Do note that if you installed Sticky Hours using flatpak it may be a good idea to run "sudo flatpak override --filesystem=xdg-config/gtk-3.0" to allow flatpak to use your theme, and set the environment variable GTK_THEME.'
                   }
                 ]
               },
