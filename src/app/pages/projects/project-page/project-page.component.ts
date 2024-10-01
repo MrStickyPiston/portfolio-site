@@ -230,9 +230,9 @@ export class ProjectPageComponent {
                         icon: 'desktop_mac'
                       },
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Flatpak.zip',
-                        text: 'Linux Flatpak',
-                        icon: 'lock'
+                        url: 'https://flathub.org/apps/io.github.mrstickypiston.stickyhours',
+                        text: 'Linux Flatpak (Flathub)',
+                        icon: 'package_2'
                       },
                       {
                         url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
