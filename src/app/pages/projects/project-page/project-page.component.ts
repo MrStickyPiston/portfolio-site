@@ -46,7 +46,7 @@ export class ProjectPageComponent {
       this.data = {
         header: {
           title: "Sticky hours",
-          text: "A app for finding common free hours, allowing to use them for something usefull. build on top of the Zermelo api.",
+          text: "An app for finding common free hours, allowing to use them for something usefull.",
           buttons: [
             {
               scroll: 'about',
