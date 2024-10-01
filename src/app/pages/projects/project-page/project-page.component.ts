@@ -48,7 +48,21 @@ export class ProjectPageComponent {
           title: "Sticky hours",
           text: "A app for finding common free hours, allowing to use them for something usefull. build on top of the Zermelo api.",
           buttons: [
-
+            {
+              scroll: 'about',
+              text: 'About',
+              icon: 'info'
+            },
+            {
+              scroll: 'download',
+              text: 'Download',
+              icon: 'download'
+            },
+            {
+              scroll: 'faq',
+              text: 'FaQ',
+              icon: 'help'
+            }
           ]
         },
         name: "Sticky Hours",
@@ -202,7 +216,7 @@ export class ProjectPageComponent {
           },
           {
             name: 'Downloads',
-            id: 'downloads',
+            id: 'download',
             subsections: [
               {
                 name: 'Stable',
@@ -232,7 +246,7 @@ export class ProjectPageComponent {
                       {
                         url: 'https://flathub.org/apps/io.github.mrstickypiston.stickyhours',
                         text: 'Linux Flatpak (Flathub)',
-                        icon: 'package_2'
+                        icon: 'lock'
                       },
                       {
                         url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',

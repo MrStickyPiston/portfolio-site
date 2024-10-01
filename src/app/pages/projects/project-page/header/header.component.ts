@@ -12,7 +12,7 @@ import { UtilsService } from '../../../../services/utils.service';
   providers: []
 })
 export class ProjectPageHeaderComponent {
-  @Input({required: true}) data: any
+  @Input({required: true}) data!: any;
   scrollTo: Function;
 
   constructor(

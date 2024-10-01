@@ -5,11 +5,28 @@
             <h1 class="mat-h1">{{data.title}}</h1>
             <p>{{data.text}}</p>
         </div>
-        <div class="header-buttons">
-            <a mat-flat-button color="primary" id="projects-mount" (click)="scrollTo('about')">
-                <mat-icon>expand_more</mat-icon>
-                About
-            </a>
+        <div class="buttons-box">
+            @for (button of data.buttons; track $index) {
+
+                @if (button.scroll) {
+                    <button mat-flat-button color="primary" (click)="scrollTo(button.scroll)">
+                        {{button.text}}
+    
+                        @if (button.icon) {
+                        <mat-icon>{{button.icon}}</mat-icon>
+                        }
+                    </button>
+                } @else {
+                    <a mat-flat-button color="primary" [href]="button.url" target="_blank">
+                        {{button.text}}
+    
+                        @if (button.icon) {
+                        <mat-icon>{{button.icon}}</mat-icon>
+                        }
+                    </a>
+                }
+                
+            }
         </div>
     </div>
 
