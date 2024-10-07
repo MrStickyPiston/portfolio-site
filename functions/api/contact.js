@@ -23,8 +23,8 @@ export const onRequestPost = async (data) => {
     }
 
     // Check for required fields
-    if (!contactInfo.name || !contactInfo.email || !contactInfo.message) {
-        return new Response(JSON.stringify({ error: "Missing required fields" }), {
+    if (!contactInfo.name || !contactInfo.email || !contactInfo.message || !contactInfo.subject) {
+        return new Response(JSON.stringify({ error: "Missing required fields or fields are empty" }), {
             status: 400,
             headers: { 'Content-Type': 'application/json' }
         });
@@ -44,6 +44,10 @@ export const onRequestPost = async (data) => {
                     {
                         "name": "Email",
                         "value": `${contactInfo.email}`
+                    },
+                    {
+                        "name": "Subject",
+                        "value": `${contactInfo.subject}`
                     },
                     {
                         "name": "Message",

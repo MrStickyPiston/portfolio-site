@@ -11,6 +11,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-contact',
@@ -49,9 +50,9 @@ export class ContactComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar
-  ) {
-  }
+    private _snackBar: MatSnackBar,
+    private api: ApiService
+  ) { }
 
   capitalizeFirstLetter(s: string) {
     s = s.trim()
@@ -67,11 +68,30 @@ export class ContactComponent {
     return name + this.capitalizeFirstLetter(this.nameFormGroup.get('last')?.value!)
   }
 
-  submit() {
-    this._snackBar.open('Contact form submitted', 'Ok', {
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-    });
+  async submit() {
+
+    const response = await this.api.post('contact', {
+      name: this.getName(),
+      email: this.mailFormGroup.get('email')?.value,
+      subject: this.messageFormGroup.get('subject')?.value,
+      message: this.messageFormGroup.get('message')?.value
+    })
+
+    if (response.success) {
+      this._snackBar.open('Contact form submitted', 'Ok', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
+    } else {
+
+      this._snackBar.open(response.error.message, 'Ok', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
+
+    }
+
+
   }
 
 }

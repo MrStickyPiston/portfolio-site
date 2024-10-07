@@ -4,6 +4,7 @@ import { InMemoryScrollingFeature, InMemoryScrollingOptions, provideRouter, with
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'disabled',
@@ -17,5 +18,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, inMemoryScrollingFeature), 
     provideClientHydration(), 
     provideAnimationsAsync(),
+    provideHttpClient(withFetch())
   ]
 };
