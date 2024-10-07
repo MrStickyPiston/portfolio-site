@@ -14,7 +14,7 @@ textarea {
 
 #form-message {
     background-color: var(--mdc-filled-text-field-container-color);
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 8px;
 }
 
@@ -36,7 +36,8 @@ button+button {
         color: var(--mat-sidenav-content-text-color) !important;
     }
 
-    input {
+    input,
+    textarea {
         caret-color: var(--mat-sidenav-content-text-color) !important;
     }
 
@@ -47,7 +48,7 @@ button+button {
     }
 
     .mat-step-icon-state-number {
-        color: var(--mat-sidenav-content-background-color) !important;  
+        color: var(--mdc-elevated-card-container-color) !important;  
     }
     
     .mat-step-icon-selected {

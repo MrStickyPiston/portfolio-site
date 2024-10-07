@@ -35,6 +35,7 @@ export const onRequestPost = async (data) => {
         "content": null,
         "embeds": [
             {
+                "title": contactInfo.subject,
                 "color": 4054148,
                 "fields": [
                     {
@@ -49,16 +50,19 @@ export const onRequestPost = async (data) => {
                         "name": "Subject",
                         "value": `${contactInfo.subject}`
                     },
-                    {
-                        "name": "Message",
-                        "value": `${contactInfo.message}`
-                    }
                 ],
+                "description": `${contactInfo.message}`,
                 "timestamp": new Date().toISOString()
             }
         ],
-        "username": `${contactInfo.name} (contact)`,
+        "username": `Contact`,
         "attachments": []
+    }
+
+    if (data.request.headers['x-real-ip'] != null) {
+        discordPayload.embeds[0].footer = {
+            text: `Submitted from ${data.request.headers['x-real-ip']}`
+        }
     }
 
     const webhookUrl = data.env.CONTACT_WEBHOOK;
