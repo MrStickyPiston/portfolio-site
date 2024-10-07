@@ -1,4 +1,7 @@
-export const onRequestPost = async ({ request }) => {
+export const onRequestPost = async (data) => {
+
+    const request = data.request
+
     // Check if the request method is POST
     if (request.method !== 'POST') {
         return new Response(JSON.stringify({ error: "Invalid method" }), {
@@ -29,11 +32,33 @@ export const onRequestPost = async ({ request }) => {
 
     // Prepare the Discord webhook payload
     const discordPayload = {
-        content: `New contact information received:\n- Name: ${contactInfo.name}\n- Email: ${contactInfo.email}\n- Message: ${contactInfo.message}`
-    };
+        "content": null,
+        "embeds": [
+            {
+                "color": 4054148,
+                "fields": [
+                    {
+                        "name": "Name",
+                        "value": `${contactInfo.name}`
+                    },
+                    {
+                        "name": "Email",
+                        "value": `${contactInfo.email}`
+                    },
+                    {
+                        "name": "Message",
+                        "value": `${contactInfo.message}`
+                    }
+                ],
+                "timestamp": new Date().toISOString()
+            }
+        ],
+        "username": `${contactInfo.name} (contact)`,
+        "attachments": []
+    }
 
-    // Send a POST request to the Discord webhook
-    const webhookUrl = "https://discord.com/api/webhooks/1292519304386052157/T7ruLjhRgGvIYZu93mpSFDeM5grbdtxdMoBbJt_PyDFQJHmyrTB3xbtVDg-U2Q9o6mCd"; // Replace with your actual Discord webhook URL
+    const webhookUrl = data.env.CONTACT_WEBHOOK;
+
     try {
         const webhookResponse = await fetch(webhookUrl, {
             method: 'POST',
@@ -44,20 +69,21 @@ export const onRequestPost = async ({ request }) => {
         });
 
         if (!webhookResponse.ok) {
-            return new Response(JSON.stringify({ error: "Failed to send to Discord" }), {
+            return new Response(JSON.stringify({ error: "Message could not be delivered: error response" }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
     } catch (error) {
-        return new Response(JSON.stringify({ error: "Error sending to Discord" }), {
+        console.error(error)
+        return new Response(JSON.stringify({ error: "Message could not be delivered: An unexpected error occured" }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });
     }
 
     // Return a success JSON response
-    return new Response(JSON.stringify({ success: true, message: "Contact information sent to Discord" }), {
+    return new Response(JSON.stringify({}), {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
     });
