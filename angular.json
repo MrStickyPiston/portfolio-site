@@ -69,7 +69,7 @@
                 }
               ],
               "ssr": false,
-              "prerender": true
+              "prerender": false
             }
           },
           "defaultConfiguration": "production"

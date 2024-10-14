@@ -19,6 +19,7 @@
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 mat-toolbar {

@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -7,25 +7,25 @@ import { data } from '../../../../environments/data';
 import { UtilsService } from '../../../services/utils.service';
 import { RouterModule } from '@angular/router';
 
+import { slideInLeftOnEnterAnimation, fadeInOnEnterAnimation,
+   slideOutRightOnLeaveAnimation, fadeOutOnLeaveAnimation } from "angular-animations";
+
 @Component({
   selector: 'app-home-header',
   standalone: true,
   imports: [
     MatButtonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
-    trigger('valueUpdated', [
-      state('void => *', style({ opacity: 0, transform: 'translateX(-50px)' })),
-      transition('void => *', []),
-      transition('* => *', [
-        style({ opacity: 0, transform: 'translateX(-5%)' }),
-        animate("400ms 0ms ease", style({ opacity: 1, transform: 'translateX(0px)' })) // Slides in from the left
-      ])
-    ]),
+    slideInLeftOnEnterAnimation({translate: '5em', duration: 700, delay: 350}),
+    fadeInOnEnterAnimation({duration: 700, delay: 350}),
+    slideOutRightOnLeaveAnimation({translate: '5em', duration: 700}),
+    fadeOutOnLeaveAnimation({duration: 700}),
   ],
 })
 export class HeaderComponent {
@@ -33,9 +33,6 @@ export class HeaderComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {  }
-
-  
-
 
   function = data.home.functions[0]
   functions = data.home.functions
@@ -48,7 +45,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.functionSwapInterval = setInterval(() => { this.nextTitle() }, 2.5 * 1000);
+      this.functionSwapInterval = setInterval(() => { this.nextTitle() }, 3 * 1000);
     }
   }
 
