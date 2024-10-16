@@ -10,6 +10,7 @@ import { NavigationEnd, NavigationStart, Router, RouterEvent, RouterModule } fro
 import { data } from '../../../environments/data';
 import { FooterComponent } from "../footer/footer.component";
 import { filter } from 'rxjs';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
   selector: 'app-nav',
@@ -39,7 +40,9 @@ export class NavComponent {
   constructor(
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object,
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
   ) {
+    angulartics2GoogleAnalytics.startTracking();
   }
 
   ngAfterViewInit() {
