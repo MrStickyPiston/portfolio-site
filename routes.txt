@@ -3,3 +3,4 @@
 /projects
 /projects/sticky-hours
 /contact
+/404

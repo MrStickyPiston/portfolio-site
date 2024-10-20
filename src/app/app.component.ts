@@ -18,6 +18,4 @@ import { MatSidenavContent } from '@angular/material/sidenav';
     NavComponent
   ]
 })
-export class AppComponent {
-  title = 'portfolio';
-}
+export class AppComponent {}
