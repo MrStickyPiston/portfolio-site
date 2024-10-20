@@ -177,6 +177,12 @@ export class AboutComponent {
       ]
     },
     {
+      lang: "CSS",
+      types: [
+        "frontend"
+      ]
+    },
+    {
       lang: "SASS",
       types: [
         "frontend"

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { bounceInOnEnterAnimation, bounceOnEnterAnimation, collapseLeftOnLeaveAnimation, collapseOnLeaveAnimation, expandOnEnterAnimation, expandRightOnEnterAnimation, fadeInLeftAnimation, fadeInLeftOnEnterAnimation, flipInYOnEnterAnimation, flipOnEnterAnimation, flipOutYOnLeaveAnimation, heartBeatAnimation, heartBeatOnEnterAnimation, jelloOnEnterAnimation, lightSpeedInAnimation, lightSpeedInOnEnterAnimation, pulseOnEnterAnimation, swingOnEnterAnimation, wobbleOnEnterAnimation, zoomInLeftAnimation, zoomInLeftOnEnterAnimation, zoomInOnEnterAnimation, zoomOutOnLeaveAnimation, zoomOutRightOnLeaveAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-testinominals',
@@ -15,73 +16,28 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './testinominals.component.html',
   styleUrl: './testinominals.component.scss',
   animations: [
-    trigger('movement', [
-      state('left', style({ transform: 'translateX(-5%)', opacity: 1 })),
-      state('right', style({ transform: 'translateX(5%)', opacity: 1 })),
-      transition('* => left', [
-        style({ transform: 'translateX(5%)', opacity: 0 }),
-        animate('500ms ease', style({ transform: 'translateX(0)', opacity: 1 }))
-      ]),
-      transition('* => right', [
-        style({ transform: 'translateX(-5%)', opacity: 0 }),
-        animate('500ms ease', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
-    ])
+    pulseOnEnterAnimation({duration: 500}),
   ]
 })
 export class TestinominalsComponent {
 
-  t!: NodeJS.Timeout;
-  animationActive: boolean = false;
-
   forward() {
-    console.log('a')
-    console.log(this.animationActive)
-    if (this.animationActive) {
-      console.log('b')
-      return
+    this.selected_id += 1
+
+    if (this.selected_id >= this.items.length) {
+      this.selected_id = 0;
     }
-
-    this.animationActive = true
-    clearTimeout(this.t)
-
-    this.movement = ''
-    this.id++;
-
-    if (this.id >= this.items.length) {
-      this.id = 0
-    }
-
-    this.item = this.items[this.id]
-    this.movement = 'right'
-    this.t = setTimeout(() => {
-      this.animationActive = false
-      this.movement = ''
-      console.log('r')
-    }, 500);
   }
 
   back() {
-    if (this.animationActive) {
-      return
+    this.selected_id -= 1
+
+    if (this.selected_id < 0) {
+      this.selected_id = this.items.length - 1;
     }
-
-    this.animationActive = true
-    clearTimeout(this.t)
-
-    this.movement = 'left';
-    this.t = setTimeout(() => {
-      this.animationActive = false
-      this.movement = ''
-      console.log('r')
-    }, 500);
   }
 
-  resetAnimation() {
-
-  }
-
-  id = 0;
+  selected_id = 0;
 
   movement: string = '';
 
@@ -121,8 +77,31 @@ export class TestinominalsComponent {
                 pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit,
                 scelerisque
                 est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.`
-    }
+    },
+    {
+      name: "Fotoclub Borger-Odoorn",
+      description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non
+                sed
+                sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti.
+                Nullam
+                condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel
+                tincidunt
+                lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus
+                ut,
+                pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit,
+                scelerisque
+                est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
+
+                In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo
+                iaculis
+                sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
+                tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at
+                turpis
+                porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.`
+    },
   ]
 
-  item = this.items[this.id];
+  // list of all testinominal ids from items
+  ids = this.items.map((item, index) => index);
 }
