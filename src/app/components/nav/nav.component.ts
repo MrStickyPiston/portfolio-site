@@ -43,6 +43,10 @@ export class NavComponent {
     angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
   ) {
     angulartics2GoogleAnalytics.startTracking();
+if (isPlatformServer(this.platformId)) {
+    this.dark_mode = true
+return
+}
 
     if (localStorage.getItem('dark_mode') === null){
       this.dark_mode = true
