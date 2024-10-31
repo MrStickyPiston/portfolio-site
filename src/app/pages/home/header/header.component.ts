@@ -36,7 +36,7 @@ export class HeaderComponent {
 
   function = data.home.functions[0]
   functions = data.home.functions
-  functionId = 1;
+  functionId = 0;
   functions_len = this.functions.length
 
   isOpen = true;
@@ -46,8 +46,6 @@ export class HeaderComponent {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.functionSwapInterval = setInterval(() => { this.nextTitle() }, 3 * 1000);
-    } else {
-      this.functionId = 0;
     }
   }
 
