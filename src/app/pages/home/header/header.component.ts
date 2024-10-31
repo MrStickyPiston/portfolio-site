@@ -46,6 +46,8 @@ export class HeaderComponent {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.functionSwapInterval = setInterval(() => { this.nextTitle() }, 3 * 1000);
+    } else {
+      this.functionId = 0;
     }
   }
 

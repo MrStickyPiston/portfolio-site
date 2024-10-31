@@ -6,6 +6,7 @@
       @for (page of navpages; track $index) {
         <a mat-list-item [routerLink]="page.route">{{page.text}}</a>
       }
+      <a mat-list-item (click)="toggle_dark_mode()">Toggle dark mode</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content #sidenavContent>
@@ -30,6 +31,15 @@
             {{page.text}}
           </a>
         }
+
+        <button mat-button (click)="toggle_dark_mode()" class="theme-toggle">
+          Theme
+          @if (dark_mode) {
+            <mat-icon>dark_mode</mat-icon>
+          } @else {
+            <mat-icon>light_mode</mat-icon>
+          }
+        </button>
       </div>
     </mat-toolbar>
 

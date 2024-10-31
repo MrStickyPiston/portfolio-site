@@ -33,7 +33,7 @@ export class NavComponent {
   navpages = data.nav;
   app_name = data.app_name
 
-  dark_mode = true;
+  dark_mode;
 
   @ViewChild('sidenavContent', { read: MatSidenavContent }) sidenavContentScrollable!: MatSidenavContent;
 
@@ -43,6 +43,16 @@ export class NavComponent {
     angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
   ) {
     angulartics2GoogleAnalytics.startTracking();
+
+    if (localStorage.getItem('dark_mode') === null){
+      this.dark_mode = true
+
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        this.dark_mode = false;
+      }
+    } else {
+      this.dark_mode = localStorage.getItem('dark_mode') === 'true' ? true : false;
+    }
   }
 
   ngAfterViewInit() {
@@ -70,5 +80,10 @@ export class NavComponent {
 
         });
       });
+  }
+
+  toggle_dark_mode() {
+    this.dark_mode = !this.dark_mode;
+    localStorage.setItem('dark_mode', this.dark_mode.toString());
   }
 }
