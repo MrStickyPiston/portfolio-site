@@ -76,7 +76,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'When i got to the upper part of secondary school i got a lot of gaps in my schedule. This inspired me to make this app, that allows you to quick and easily see your gaps for this and the next weeks. The added value of the app is that it allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, make an appointment with your teacher, or just do something fun with your friends in those otherwise lost hours.'
+                    text: 'When I got to the upper part of secondary school I got a lot of gaps in my schedule. This inspired me to make this app, that allows you to quick and easily see your gaps for this and the next weeks. The added value of the app is that it allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, make an appointment with your teacher, or just do something fun with your friends in those otherwise lost hours.'
                   }
                 ]
               }
@@ -248,11 +248,25 @@ export class ProjectPageComponent {
             ]
           },
           {
+            name: "Quick start",
+            subsections: [
+              {
+                name: 'Logging in',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'When you open the app for the first time, you will see a login screen. The app asks for your Zermelo portal id and linkcode (NOT your username and password). '
+                  },
+                ]
+              }
+            ]
+          },
+          {
             name: 'Frequently asked questions',
             id: 'faq',
             subsections: [
               {
-                name: 'How can i log in?',
+                name: 'How can I log in?',
                 id: 'faq-how-to-log-in',
                 items: [
                   {
@@ -272,7 +286,7 @@ export class ProjectPageComponent {
                 ]
               },
               {
-                name: 'How do i get a linkcode?',
+                name: 'How do I get a linkcode?',
                 id: 'faq-zermelo-get-linkcode-for-login',
                 items: [
                   {
@@ -320,7 +334,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'A nightly build for Sticky Hours is available on github actions. This build will contain the newest features, but is not (properly) tested and still in development. Only use this version if you want to test the app or try out new features before they are realeased, but know what you are doing. Report any issues you encounter on the issue tracker on the github page. Because of apple requiring you to build iOS apps on a physical computer running Xcode i will not be providing nightly iOS builds. Please build the code from source yourself if you want to test out the iOS version.'
+                    text: 'A nightly build for Sticky Hours is available on github actions. This build will contain the newest features, but is not (properly) tested and still in development. Only use this version if you want to test the app or try out new features before they are realeased, but know what you are doing. Report any issues you encounter on the issue tracker on the github page. Because of apple requiring you to build iOS apps on a physical computer running Xcode, I will not be providing nightly iOS builds. Please build the code from source yourself if you want to test out the iOS version.'
                   }
                 ]
               },
