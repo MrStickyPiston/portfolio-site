@@ -76,74 +76,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'When i got to the upper part of secondary school i got a lot of gaps in my schedule. Not 3-4 much, but at least 7 and even more if lessons were cancelled. This inspired me to making this app, that allows you to quick and easily access see your gaps for this and coming weeks. But the best is that the app allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, move a lesson if your whole class has a common gap (resulting in a later start or an earlyer end), or just do something fun in those otherwise lost hours'
-                  }
-                ]
-              },
-              {
-                name: 'Developers',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: "Sticky Hours was developed primarily by MrStickyPiston (mr.sticky.piston@gmail.com). No contributions to the code have been made by other people yet. If you want to contribute, see the link to the source code on github below."
-                  }
-                ]
-              },
-              {
-                name: 'Source code',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'The app was build with the OSS (Open Source Software) principles in mind and licensed under MIT. Open source means that everyone can view and improve the projects code, leading to non-profit community driven development. Because nobody is looking for an app with ads and tracking, no ads or tracking will be implemented ever, and everyone is allowed to use the app free of cost. If you are interested in the project and like to see something added, create an issue on the projects issue tracker linked below. If you have experience with coding in python you can also try to fork the project and add it yourself. If you think others are also interested in your feature, you can create a pull request. If you are interested in OSS in general, visit wikipedia.'
-                  },
-                  {
-                    type: ItemType.Buttons,
-                    buttons: [
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
-                        text: 'Source code',
-                        icon: 'code'
-                      },
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/issues',
-                        text: 'Issue tracker',
-                        icon: 'adjust'
-                      },
-                      {
-                        url: 'https://en.wikipedia.org/wiki/Open-source_software',
-                        text: 'OSS - Wikipedia',
-                        icon: 'book'
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                name: 'Technical details',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'The app is written in Python 3.12 with as main goal doing the same thing on every device. For the ui, the cross platform native UI framework Toga by the BeeWare project was used. This allowed building the app\'s interface with platform native elements reusing the same code for every platform, reducing the amount of platform dependent bugs. For packaging the app another tool of the BeeWare project was used, Briefcase. Briefcase allows to package any Python project as an app for most platforms. To learn more about Toga, Briefcase or the BeeWare project, use the links below.'
-                  },
-                  {
-                    type: ItemType.Buttons,
-                    buttons: [
-                      {
-                        url: 'https://beeware.org/project/projects/libraries/toga/',
-                        text: 'Toga',
-                        icon: 'book'
-                      },
-                      {
-                        url: 'https://beeware.org/project/projects/tools/briefcase/',
-                        text: 'Briefcase',
-                        icon: 'book'
-                      },
-                      {
-                        url: 'https://beeware.org/',
-                        text: 'BeeWare',
-                        icon: 'book'
-                      }
-                    ]
+                    text: 'When i got to the upper part of secondary school i got a lot of gaps in my schedule. This inspired me to make this app, that allows you to quick and easily see your gaps for this and the next weeks. The added value of the app is that it allows to add multiple users, and computes the common gaps between those users. Using this you can easily plan to work on a common project with your friends, make an appointment with your teacher, or just do something fun with your friends in those otherwise lost hours.'
                   }
                 ]
               }
@@ -167,7 +100,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'Schedule data is fetched from Zermelo directly every time you use the app, ensuring your schedule gaps are never outdated.'
+                    text: 'Schedule data is fetched from Zermelo every time you use the app, ensuring your schedule gaps are never outdated.'
                   }
                 ]
               },
@@ -203,15 +136,6 @@ export class ProjectPageComponent {
                   }
                 ]
               },
-              {
-                name: 'Open source',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'Sticky Hours is open source under the MIT license. Open source helps improve the app as anyone can contribute fixes and features. See about -> open source above for more information about open source.'
-                  }
-                ]
-              }
             ]
           },
           {
@@ -219,17 +143,16 @@ export class ProjectPageComponent {
             id: 'download',
             subsections: [
               {
-                name: 'Stable',
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'A fully tested and stable version of Sticky Hours, good for regular usage. If you dont know what version you should pick, use this one. Please select your platform below proceed to the installation guide.'
+                    text: 'Sticky Hours is available for Android on the play store, as executable installer for Windows, as application bundle for MacOS. For Linux (also chromebooks) a secure containerized flatpak version is available. For Ubuntu and Fedora a system package is available too.'
                   },
                   {
                     type: ItemType.Buttons,
                     buttons: [
                       {
-                        url: 'https://play.google.com/store/apps/details?id=dev.mrstickypiston.stickyhours',
+                        url: 'https://play.google.com/store/apps/details?id=io.github.mrstickypiston.stickyhours',
                         text: 'Android',
                         icon: 'android'
                       },
@@ -261,15 +184,6 @@ export class ProjectPageComponent {
                     ]
                   }
                 ]
-              },
-              {
-                name: 'Nigthly build',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'A nightly build for Sticky Hours is available on github actions. This build will contain the newest features, but is not (properly) tested and still in development. Only use this version if you want to test the app or try out new features before they are realeased, but know what you are doing. Report any issues you encounter on the issue tracker on the github page. Because of apple requiring you to build iOS apps on a physical computer running Xcode i will not be providing nightly iOS builds. Please build the code from source yourself if you want to test out the iOS version.'
-                  }
-                ]
               }
             ]
           },
@@ -282,7 +196,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'First, download the app from the play store using the "Stable/Android" download link in the "Downloads" section above. After that, open the Sticky Hours app. You will see the login screen. Fill in your Zermelo instance id and linkcode from the portal (NOT username and password), and press log in. After that you will be logged in and can start finding common gaps in your and others schedules. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
+                    text: 'First, download the app from the play store using the "Android" download link in the "Downloads" section above. After that, open the Sticky Hours app. You will see the login screen. Fill in your Zermelo instance id and linkcode from the portal (NOT username and password), and press log in. After that you will be logged in and can start finding common gaps in your and others schedules. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
                   }
                 ]
               },
@@ -300,7 +214,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'On MacOS you can install Sticky Hours by downloading the .dmg installer from the download section above. Use the Stable MacOS version, and save the file to your Downloads folder. While the .dmg file is zipped, safari automatically unzips files it downloads. If you are not using safari you must unzip the file manually before proceeding. Once you have done that, open the location of the file in finder, and right click it. In the context menu, select "open". A modal will pop up now, telling you apple could not verify the devloper of the file. Apple will show this warning when opening any software that was not paid for 100$/year to Apple. Luckily, you can just click "open" and ignore them.'
+                    text: 'On MacOS you can install Sticky Hours by downloading the .dmg installer from the download section above. Save the file to your Downloads folder. While the .dmg file is zipped, safari automatically unzips files it downloads. If you are not using safari you must unzip the file manually before proceeding. Once you have done that, open the location of the file in finder, and right click it. In the context menu, select "open". A modal will pop up now, telling you apple could not verify the devloper of the file. Apple will show this warning when opening any software that was not paid for 100$/year to Apple. Luckily, you can just click "open" and ignore them.'
                   },
                   {
                     type: ItemType.Text,
@@ -364,6 +278,87 @@ export class ProjectPageComponent {
                   {
                     type: ItemType.Text,
                     text: 'Linkcodes are optainable through the Zermelo web portal of your school. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'Technical',
+            subsections: [
+              {
+                name: 'Source code',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The app was build with the OSS (Open Source Software) principles in mind and licensed under MIT. Open source means that everyone can view and improve the projects code, leading to non-profit community driven development. Because nobody is looking for an app with ads and tracking, no ads or tracking will be implemented ever, and everyone is allowed to use the app free of cost. If you are interested in the project and like to see something added, create an issue on the projects issue tracker linked below. If you have experience with coding in python you can also try to fork the project and add it yourself. If you think others are also interested in your feature, you can create a pull request. If you are interested in OSS in general, visit wikipedia.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
+                        text: 'Source code',
+                        icon: 'code'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/issues',
+                        text: 'Issue tracker',
+                        icon: 'adjust'
+                      },
+                      {
+                        url: 'https://en.wikipedia.org/wiki/Open-source_software',
+                        text: 'OSS - Wikipedia',
+                        icon: 'book'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: 'Nigthly build',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'A nightly build for Sticky Hours is available on github actions. This build will contain the newest features, but is not (properly) tested and still in development. Only use this version if you want to test the app or try out new features before they are realeased, but know what you are doing. Report any issues you encounter on the issue tracker on the github page. Because of apple requiring you to build iOS apps on a physical computer running Xcode i will not be providing nightly iOS builds. Please build the code from source yourself if you want to test out the iOS version.'
+                  }
+                ]
+              },
+              {
+                name: 'Developers',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: "Sticky Hours was developed primarily by MrStickyPiston (mr.sticky.piston@gmail.com). No contributions to the code have been made by other people yet. If you want to contribute, see the link to the source code on github below."
+                  }
+                ]
+              },
+              {
+                name: 'Technical setup',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'The app is written in Python 3.12 with the main goal of running the same code on every device. For the ui, the cross platform native UI framework Toga by the BeeWare project was used. This allowed building the app\'s interface with platform native elements reusing the same code for every platform, reducing the amount of platform dependent bugs. For packaging the app another tool of the BeeWare project was used, Briefcase. Briefcase allows to package any Python project as an app for most platforms. To learn more about Toga, Briefcase or the BeeWare project, use the links below.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://beeware.org/project/projects/libraries/toga/',
+                        text: 'Toga',
+                        icon: 'book'
+                      },
+                      {
+                        url: 'https://beeware.org/project/projects/tools/briefcase/',
+                        text: 'Briefcase',
+                        icon: 'book'
+                      },
+                      {
+                        url: 'https://beeware.org/',
+                        text: 'BeeWare',
+                        icon: 'book'
+                      }
+                    ]
                   }
                 ]
               }
