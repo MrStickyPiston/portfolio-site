@@ -126,7 +126,8 @@ export class ProjectPageComponent {
                         url: 'StickyHours-screenshot-linux-common_hours_menu',
                         alt: 'Sticky Hours Linux app main menu english dark mode round theme',
                         width: 646,
-                        height: 521
+                        height: 521,
+                        priority: true
                       },
                       {
                         url: 'StickyHours-screenshot-android-common_hours_menu',
@@ -154,6 +155,7 @@ export class ProjectPageComponent {
                         href: 'https://play.google.com/store/apps/details?id=io.github.mrstickypiston.stickyhours',
                         width: 140,
                         height: 41.5,
+                        resize: false
                       },
                     ]
                   },
@@ -273,6 +275,21 @@ export class ProjectPageComponent {
               {
                 name: 'Generating a linkcode',
                 items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'On the zermelo portal, click on the "settings" ("instellingen") menu option like the image below. '
+                  },
+                  {
+                    type: ItemType.Images,
+                    images: [
+                      {
+                        url: 'Screenshot_2024-11-03_at_10-40-03_Zermelo_nav-settings_ckewgm',
+                        alt: 'Screenshot of zermelo',
+                        width: 2560,
+                        height: 1269
+                      },
+                    ]
+                  },
                   {
                     type: ItemType.Images,
                     images: [

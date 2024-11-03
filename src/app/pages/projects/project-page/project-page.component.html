@@ -30,10 +30,10 @@
                                             
                                             @if (image.href) {
                                                 <a [href]="image.href">
-                                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="image.resize === false ? '' : 'resize'">
+                                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''" [priority]="image.priority ? 'true' : 'false'">
                                                 </a> 
                                             } @else {
-                                                <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="image.resize === false ? '' : 'resize'">
+                                                <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''" [priority]="image.priority ? 'true' : 'false'">
                                             }
                                         }
                                     </div>
