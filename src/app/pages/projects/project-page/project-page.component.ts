@@ -7,6 +7,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { E404Component } from '../../error/e404/e404.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-project-page',
@@ -17,6 +18,7 @@ import { E404Component } from '../../error/e404/e404.component';
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
+    MatExpansionModule,
     E404Component
   ],
   templateUrl: './project-page.component.html',
@@ -139,64 +141,25 @@ export class ProjectPageComponent {
             ]
           },
           {
-            name: 'Downloads',
-            id: 'download',
-            subsections: [
-              {
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'Sticky Hours is available for Android on the play store, as executable installer for Windows, as application bundle for MacOS. For Linux (also chromebooks) a secure containerized flatpak version is available. For Ubuntu and Fedora a system package is available too.'
-                  },
-                  {
-                    type: ItemType.Buttons,
-                    buttons: [
-                      {
-                        url: 'https://play.google.com/store/apps/details?id=io.github.mrstickypiston.stickyhours',
-                        text: 'Android',
-                        icon: 'android'
-                      },
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Windows.zip',
-                        text: 'Windows',
-                        icon: 'desktop_windows'
-                      },
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-macOS.zip',
-                        text: 'MacOS',
-                        icon: 'desktop_mac'
-                      },
-                      {
-                        url: 'https://flathub.org/apps/io.github.mrstickypiston.stickyhours',
-                        text: 'Linux Flatpak (Flathub)',
-                        icon: 'lock'
-                      },
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
-                        text: 'Ubuntu 24.04 LTS',
-                        icon: 'computer'
-                      },
-                      {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Fedora-40.zip',
-                        text: 'Fedora 40',
-                        icon: 'computer'
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
             name: 'Installation',
-            id: 'installation',
             subsections: [
               {
                 name: 'Android',
                 items: [
                   {
+                    type: ItemType.Images,
+                    images: [
+                      {
+                        url: 'GetItOnGooglePlay_Badge_Web_color_English',
+                        href: 'https://play.google.com/store/apps/details?id=io.github.mrstickypiston.stickyhours',
+                        width: 140,
+                        height: 41.5,
+                      },
+                    ]
+                  },
+                  {
                     type: ItemType.Text,
-                    text: 'First, download the app from the play store using the "Android" download link in the "Downloads" section above. After that, open the Sticky Hours app. You will see the login screen. Fill in your Zermelo instance id and linkcode from the portal (NOT username and password), and press log in. After that you will be logged in and can start finding common gaps in your and others schedules. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
+                    text: 'On Android you can install the app on Google Play using the link above. After you click install the play store will install the app for you. Once the app is installed, you can continue to the "Quick start" section below.'
                   }
                 ]
               },
@@ -204,30 +167,41 @@ export class ProjectPageComponent {
                 name: 'Windows',
                 items: [
                   {
-                    type: ItemType.Text,
-                    text: 'The StickyHours app for Windows is packaged as an .msi installer in a zip file, and supports 64 bit Windows 10 and 11. Please download the latest stable Windows version of the app from the Download section above. Save the zip file in your downloads folder and extract the .msi file. Then, run the msi file. It will let you choose between user installation and system wide installation. If you want more people one this computer to use the program than just you, choose system wide. Do note that this option requires admin rights though. Click install after that. The installer will take a few seconds to half a minute to install Sticky Hours depending on your device. Once the installer says it is done click finish. The app is installed on your computer now and accessible via the start menu. When you open the app you will see the login screen. To log in, enter your Zermelo instance id and linkcode (NOT your username or password), and press log in. After that you will be logged in. See the faq below for more information about instance id\'s and obtaining a linkcode or using the app.'
-                  }
-                ]
-              },
-              {
-                name: 'MacOS',
-                items: [
-                  {
-                    type: ItemType.Text,
-                    text: 'On MacOS you can install Sticky Hours by downloading the .dmg installer from the download section above. Save the file to your Downloads folder. While the .dmg file is zipped, safari automatically unzips files it downloads. If you are not using safari you must unzip the file manually before proceeding. Once you have done that, open the location of the file in finder, and right click it. In the context menu, select "open". A modal will pop up now, telling you apple could not verify the devloper of the file. Apple will show this warning when opening any software that was not paid for 100$/year to Apple. Luckily, you can just click "open" and ignore them.'
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Windows.zip',
+                        text: 'Sticky Hours for Windows',
+                        icon: 'download'
+                      }
+                    ]
                   },
                   {
                     type: ItemType.Text,
-                    text: 'Once you click "open" the .dmg file will open and you can now drag the Sticky Hours app to your Applications folder, just like any other app for MacOS. After that you can open the app by opening Launchpad  and searching for "Sticky Hours". When you start the app for the first time you will get a popup again. This time because "Sticky Hours is an app that was downloaded from the internet". And again the solution is to just click "open". And that\'s it, you have installed the Sticky Hours app on MacOS! Enter your zermelo portal id and linkcode to login. (NOT your password or username). If you don\'t know what to enter or how to use the app, see the "Frequently asked questions" below.'
+                    text: 'The StickyHours app for Windows is packaged as an .msi installer in a zip file, and supports 64 bit Windows 10 and 11. Please download the latest version of the app by using the download button above. Save the zip file in your downloads folder and extract the .msi file. Then, run the msi file. It will let you choose between user installation and system wide installation. If you want more people one this computer to use the program than just you, choose system wide. Do note that this option requires admin rights though. Click install after that. The installer will take a few seconds to half a minute to install Sticky Hours depending on your device. Once the installer says it is done click finish. The app is installed on your computer now and accessible via the start menu. The installer does not pin the app yo your desktop or taskbar at default but you can do that by yourself if you want to by dragging the app to the place you want it to be.'
                   }
                 ]
               },
               {
-                name: 'iOS',
+                name: 'Sticky Hours for MacOS',
                 items: [
                   {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-macOS.zip',
+                        text: 'MacOS',
+                        icon: 'download'
+                      },
+                    ]
+                  },
+                  {
                     type: ItemType.Text,
-                    text: 'Unfortunately iOS requires apps to pay 100 USD yearly to even build a production ready .ipa (iOS app installation bundle), so no official release build is provided. However, you can try building the app yourself for your own iPhone or iPad.'
+                    text: 'On MacOS you can install Sticky Hours by downloading the .dmg installer using the button above. Save the file to your Downloads folder. While the .dmg file is zipped, safari automatically unzips files it downloads. If you are not using safari you must unzip the file manually before proceeding. Once you have done that, open the location of the file in finder, and right click it. In the context menu, select "open". A modal will pop up now, telling you apple could not verify the devloper of the file. Apple will show this warning when opening any software that was not paid for 100$/year to Apple. Luckily, you can just click "open" and ignore them.'
+                  },
+                  {
+                    type: ItemType.Text,
+                    text: 'Once you click "open" the .dmg file will open and you can now drag the Sticky Hours app to your Applications folder, just like any other app for MacOS. After that you can open the app by opening Launchpad  and searching for "Sticky Hours". When you start the app for the first time you will get a popup again. This time because "Sticky Hours is an app that was downloaded from the internet". And again the solution is to just click "open". And that\'s it, you have installed the Sticky Hours app on MacOS!'
                   }
                 ]
               },
@@ -235,16 +209,33 @@ export class ProjectPageComponent {
                 name: 'Linux',
                 items: [
                   {
-                    type: ItemType.Text,
-                    text: 'On Linux you can install Sticky Hours sandboxed using flatpak and using Ubuntu/Fedora system packages. Please pick the package you want to use and download it from the download section above. Install the package using your package manager and open the app. You will see the login screen, where you can enter your Zermelo portal id and linkcode (NOT your username and password). For instructions on how to find your Zermelo portal id or linkcode, see the FaQ below.'
+                    type: ItemType.Buttons,
+                    buttons: [
+                      
+                      
+                      {
+                        url: 'https://flathub.org/apps/io.github.mrstickypiston.stickyhours',
+                        text: 'Sticky Hours Flatpak (Flathub)',
+                        icon: 'download'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
+                        text: 'Sticky Hours for Ubuntu 24.04 LTS',
+                        icon: 'download'
+                      },
+                      {
+                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Fedora-40.zip',
+                        text: 'Sticky Hours for Fedora 40',
+                        icon: 'download'
+                      }
+                    ]
                   },
                   {
                     type: ItemType.Text,
-                    text: 'Do note that if you installed Sticky Hours using flatpak it may be a good idea to run "sudo flatpak override --filesystem=xdg-config/gtk-3.0" to allow flatpak to use your theme, and set the environment variable GTK_THEME.'
+                    text: 'On Linux you can install Sticky Hours sandboxed using flatpak and using Ubuntu/Fedora system packages. Please pick the package you want to use and download it from the download section above. Install the package using your package manager and open the app. You will see the login screen, where you can enter your Zermelo portal id and linkcode (NOT your username and password). For instructions on how to find your Zermelo portal id or linkcode, see the FaQ below.'
                   }
                 ]
               },
-
             ]
           },
           {
@@ -255,8 +246,50 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'When you open the app for the first time, you will see a login screen. The app asks for your Zermelo portal id and linkcode (NOT your username and password). '
+                    text: 'When you open the app for the first time, you will see a login screen. The app asks for your Zermelo portal id and linkcode (NOT your username and password). To find your portal id and linkcode, you first need access to your Zermelo portal.',
                   },
+                ]
+              },
+              {
+                name: 'Accessing your Zermelo portal',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'To access your Zermelo portal, navigate to your schools website and search for "Zermelo" or roosters. Click on the link to check where it leads you. If you found your Zermelo portal, it will ask you to log in with your school credentials. If you see something like the image below, you have succesfully found and logged in into your Zermelo portal.'
+                  },
+                  {
+                    type: ItemType.Images,
+                    images: [
+                      {
+                        url: 'Screenshot_2024-11-03_at_10-40-03_Zermelo_a911mf',
+                        alt: 'Screenshot of zermelo',
+                        width: 2560,
+                        height: 1269
+                      }
+                    ]
+                  },
+                ]
+              },
+              {
+                name: 'Generating a linkcode',
+                items: [
+                  {
+                    type: ItemType.Images,
+                    images: [
+                      {
+                        url: 'Screenshot_2024-11-03_at_10-48-34_Zermelo_nav-settings_gxxn2r',
+                        alt: 'Screenshot of zermelo',
+                        width: 2560,
+                        height: 1269
+                      },
+                      {
+                        url: 'Screenshot_2024-11-03_at_10-48-44_Zermelo_nav-settings_cuyjyf',
+                        alt: 'Screenshot of zermelo',
+                        width: 2560,
+                        height: 1269
+                      }
+                    ]
+                  }
                 ]
               }
             ]
@@ -292,6 +325,15 @@ export class ProjectPageComponent {
                   {
                     type: ItemType.Text,
                     text: 'Linkcodes are optainable through the Zermelo web portal of your school. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
+                  }
+                ]
+              },
+              {
+                name: 'Why is there no iOS version?',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'Unfortunately iOS requires apps to pay 100 USD yearly to even build a production ready .ipa (iOS app installation bundle), so no official release build is provided. However, you can try building the app yourself for your own iPhone or iPad.'
                   }
                 ]
               }
@@ -391,5 +433,6 @@ enum ItemType {
   Text,
   Images,
   Buttons,
-  Chips
+  Chips,
+  Accordion
 }

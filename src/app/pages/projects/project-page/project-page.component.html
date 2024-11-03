@@ -28,8 +28,13 @@
                                     <div class="image-container">
                                         @for (image of item.images; track $index) {
                                             
-                                            <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw">
-                                            
+                                            @if (image.href) {
+                                                <a [href]="image.href">
+                                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="image.resize === false ? '' : 'resize'">
+                                                </a> 
+                                            } @else {
+                                                <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="image.resize === false ? '' : 'resize'">
+                                            }
                                         }
                                     </div>
                                 } @case (itemType.Buttons) {
@@ -50,6 +55,8 @@
                                             <mat-chip>{{chip}}</mat-chip>
                                         }
                                     </mat-chip-set>
+                                } @case (itemType.Accordion) {
+                                    <mat-accordion></mat-accordion>
                                 }
                             }
                             </div>
