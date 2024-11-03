@@ -7,7 +7,6 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { E404Component } from '../../error/e404/e404.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-project-page',
@@ -18,7 +17,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
-    MatExpansionModule,
     E404Component
   ],
   templateUrl: './project-page.component.html',
@@ -277,7 +275,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'On the zermelo portal, click on the "settings" ("instellingen") menu option like the image below. '
+                    text: 'On the zermelo portal, click on the "settings" ("instellingen") menu option in the sidebar left like the image below. This will open the "settings" menu.'
                   },
                   {
                     type: ItemType.Images,
@@ -289,6 +287,10 @@ export class ProjectPageComponent {
                         height: 1269
                       },
                     ]
+                  },
+                  {
+                    type: ItemType.Text,
+                    text: 'In the "settings" menu, click on the button "Connect external application" ("Koppel externe applicatie") as marked in the image on the left side below. This will open a popup modal with a QR code, your Zermelo instance id and your generated linkcode, like the image on the right. You can ignore the QR code. The above red-boxed text is your instance id, the lower text your linkcode. Sadly those values can not be copied so you have to type them over by yourself.'
                   },
                   {
                     type: ItemType.Images,
@@ -451,5 +453,4 @@ enum ItemType {
   Images,
   Buttons,
   Chips,
-  Accordion
 }
