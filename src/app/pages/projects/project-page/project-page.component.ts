@@ -333,7 +333,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'A Zermelo portal id is assigned to your school if your school uses Zermelo. You can find it by going to your school`s web portal, and looking at the url in your browsers url field. The Zermelo portal id is the value between "https://" and ".zportal.nl". For example, if the link is "https://sticky-hours.zportal.nl/app", the portal id would be "sticky-hours". If you don\'t know the url of your school`s Zermelo portal, look on the site of your school, or ask your school.'
+                    text: 'Please take a look at the "Quick start" section above.'
                   }
                 ]
               },
@@ -343,7 +343,7 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'Linkcodes are optainable through the Zermelo web portal of your school. If you don\'t know your school`s web portal url, see "What is my Zermelo portal name" above for more details. Once you are logged in on the Zermelo web portal, please open the settings. You will see the option "Link external application" among some other options. Please click on it, you will see a pop up modal containing an QR code, your portal name under it, and below that your one time link code.'
+                    text: 'Please take a look at the "Quick start" section above.'
                   }
                 ]
               },
