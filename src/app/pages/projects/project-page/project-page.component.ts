@@ -54,7 +54,7 @@ export class ProjectPageComponent {
               icon: 'info'
             },
             {
-              scroll: 'download',
+              scroll: 'installation',
               text: 'Download',
               icon: 'download'
             },
@@ -141,6 +141,7 @@ export class ProjectPageComponent {
           },
           {
             name: 'Installation',
+            id: 'installation',
             subsections: [
               {
                 name: 'Android',
