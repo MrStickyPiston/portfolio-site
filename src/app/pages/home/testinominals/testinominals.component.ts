@@ -1,9 +1,8 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { bounceInOnEnterAnimation, bounceOnEnterAnimation, collapseLeftOnLeaveAnimation, collapseOnLeaveAnimation, expandOnEnterAnimation, expandRightOnEnterAnimation, fadeInLeftAnimation, fadeInLeftOnEnterAnimation, flipInYOnEnterAnimation, flipOnEnterAnimation, flipOutYOnLeaveAnimation, heartBeatAnimation, heartBeatOnEnterAnimation, jelloOnEnterAnimation, lightSpeedInAnimation, lightSpeedInOnEnterAnimation, pulseOnEnterAnimation, swingOnEnterAnimation, wobbleOnEnterAnimation, zoomInLeftAnimation, zoomInLeftOnEnterAnimation, zoomInOnEnterAnimation, zoomOutOnLeaveAnimation, zoomOutRightOnLeaveAnimation } from 'angular-animations';
+import { pulseOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-testinominals',

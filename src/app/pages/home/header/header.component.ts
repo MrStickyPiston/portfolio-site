@@ -1,14 +1,16 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { data } from '../../../../environments/data';
-import { UtilsService } from '../../../services/utils.service';
 import { RouterModule } from '@angular/router';
+import { data } from '../../../../environments/data';
 
-import { slideInLeftOnEnterAnimation, fadeInOnEnterAnimation,
-   slideOutRightOnLeaveAnimation, fadeOutOnLeaveAnimation } from "angular-animations";
+import {
+  fadeInOnEnterAnimation,
+  fadeOutOnLeaveAnimation,
+  slideInLeftOnEnterAnimation,
+  slideOutRightOnLeaveAnimation
+} from "angular-animations";
 
 @Component({
   selector: 'app-home-header',

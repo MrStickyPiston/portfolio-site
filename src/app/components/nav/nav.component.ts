@@ -1,12 +1,11 @@
 import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
-import { AsyncPipe, isPlatformServer } from '@angular/common';
+import { isPlatformServer } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCard } from '@angular/material/card';
-import { NavigationEnd, NavigationStart, Router, RouterEvent, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { data } from '../../../environments/data';
 import { FooterComponent } from "../footer/footer.component";
 import { filter } from 'rxjs';
@@ -23,8 +22,6 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    AsyncPipe,
-    MatCard,
     RouterModule,
     FooterComponent
   ]

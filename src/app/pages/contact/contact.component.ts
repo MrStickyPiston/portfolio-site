@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
-import { ContactHeaderComponent } from './header/header.component';
-import { MatStepperModule } from '@angular/material/stepper'
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { Component } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
+  MatSnackBar
 } from '@angular/material/snack-bar';
+import { MatStepperModule } from '@angular/material/stepper';
 import { ApiService } from '../../services/api/api.service';
+import { ContactHeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-contact',

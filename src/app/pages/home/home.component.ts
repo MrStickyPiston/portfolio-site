@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { HeaderComponent } from "../../pages/home/header/header.component";
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from "../../pages/home/header/header.component";
 import { HomeProjectsComponent } from "./projects/projects.component";
 import { TestinominalsComponent } from "./testinominals/testinominals.component";
-import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home',
