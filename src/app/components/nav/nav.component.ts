@@ -57,9 +57,7 @@ return
   }
 
   ngAfterViewInit() {
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
+    this.router.events.subscribe(() => {
         setTimeout(() => {
           if (isPlatformServer(this.platformId)) {
             return
