@@ -1,46 +1,33 @@
-<app-home-header></app-home-header>
+<header>
 
-<div class="page-content">
+    <div class="header-content">
+        <div class="header-text">
+            <h2 class="mat-h2">If you are looking for a</h2>
 
-    <div class="content-block">
+                @for (function of functions; track $index) {
+                    @if (functionId == functions.indexOf(function)){
+                        <h1 class="mat-h1 function" [@slideInLeftOnEnter] [@fadeInOnEnter] [@slideOutRightOnLeave] [@fadeOutOnLeave]>{{function}}</h1>
+                    }
+                }
+                
+                <h1 class="func-spacer">{{function}}</h1>
 
-        <h2>Top projects</h2>
-
-        <mat-card class="section">
-            <mat-card-content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non
-                sed
-                sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti.
-                Nullam
-                condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel
-                tincidunt
-                lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus
-                ut,
-                pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit,
-                scelerisque
-                est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
-
-                In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo
-                iaculis
-                sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
-                tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at
-                turpis
-                porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
-            </mat-card-content>
-            <mat-card-actions>
-                <a mat-stroked-button routerLink="projects">
-                    <mat-icon>chevron_right</mat-icon>
-                    More projects
-                </a>
-            </mat-card-actions>
-        </mat-card>
-
-        <app-home-projects class="section"></app-home-projects>
-
-        <h2>What people said about me</h2>
-
-        <app-testinominals class="section"></app-testinominals>
-    
+            <h2 class="mat-h2">Look no further - you found an amazing one!</h2>
+        </div>
+        <div class="header-buttons">
+            <a mat-flat-button color="primary" routerLink="about">
+                <mat-icon>read_more</mat-icon>
+                About me
+            </a>
+            <a mat-flat-button color="primary" routerLink="projects">
+                <mat-icon>list_alt</mat-icon>
+                Projects
+            </a>
+            <a mat-flat-button color="primary" href="https://github.com/MrStickyPiston" target="_blank">
+                <mat-icon>code</mat-icon>
+                Github
+            </a>
+        </div>
     </div>
-</div>
+
+</header>

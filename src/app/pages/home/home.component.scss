@@ -1,4 +1,18 @@
-.section {
-    margin-bottom: 8px;
-    display: block;
+.function {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.func-spacer {
+    visibility: hidden;
+}
+
+.header-text :first-child {
+    margin: 0;
+}
+
+header {
+    height: calc(100vh - 154px);
 }

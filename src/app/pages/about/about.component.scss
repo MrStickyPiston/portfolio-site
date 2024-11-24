@@ -3,4 +3,8 @@
     .mdc-tab__text-label {
         color: var(--mat-tab-header-pagination-icon-color) !important;
     }
+
+    .mdc-card__actions {
+        padding: 0 !important;
+    }
 }

@@ -4,7 +4,9 @@ export const data = {
         functions: [
             "full-stack software engineer",
             "desktop app developer",
-            "UI/UX designer"
+            "UI/UX designer",
+            "Android developer",
+            "Minecraft mod developer"
         ]
     },
     nav: [

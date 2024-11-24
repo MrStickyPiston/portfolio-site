@@ -2,123 +2,139 @@
 
 <div class="page-content">
 
-    <mat-card class="content-block">
-        <mat-card-content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nisi in est fermentum rhoncus non sed
-            sem. Aenean scelerisque nisi eget risus tristique, eget lacinia enim vulputate. Suspendisse potenti. Nullam
-            condimentum quam vel nunc auctor mollis. Pellentesque blandit libero sit amet erat fermentum, vel tincidunt
-            lorem volutpat. Curabitur tempus vel enim efficitur tristique. Morbi turpis ligula, faucibus in luctus ut,
-            pretium iaculis arcu. Aliquam erat volutpat. Aenean ut tortor lacinia, ultricies libero blandit, scelerisque
-            est. Etiam ex sem, interdum nec fermentum et, fringilla euismod velit.
+    <div class="content-block">
 
-            In varius posuere porta. Phasellus ut facilisis velit. Proin maximus faucibus mi, in placerat leo iaculis
-            sed. Quisque elit augue, elementum eu sodales nec, auctor ac purus. Nullam pulvinar augue convallis,
-            tristique dui a, vulputate arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Suspendisse volutpat tincidunt metus in pellentesque. Morbi pellentesque orci at turpis
-            porttitor rutrum. Mauris rhoncus felis sed dictum viverra. Maecenas faucibus volutpat bibendum.
-        </mat-card-content>
-        <mat-card-actions>
-            <a mat-stroked-button (click)="scrollTo('languages-mount')" id="languages-mount">
-                <mat-icon>code</mat-icon>
-                Languages
-            </a>
-            <a mat-stroked-button (click)="scrollTo('experience-mount')">
-                <mat-icon>school</mat-icon>
-                Experience
-            </a>
-        </mat-card-actions>
-    </mat-card>
+        <h2>Skills, programming languages and frameworks</h2>
+        <mat-card>
 
-    <mat-accordion class="content-block">
+            <mat-card-content>At a very young age i started programming with scratch, a visual programming language.
+                Later switched to python, as it
+                allowed much more control over the cose and was actually usefull for making apps/websites. Today i still
+                use python, because
+                it is fast to write and fast enough for most applications, but i also learned new languages. Because I
+                already knew the basics of
+                programming and logic I was able to quickly master them.
+                Learning those new languages gave me new opportunities to use my coding skills practically. JavaScript/
+                Typescript for
+                example is used in almost every website. This site is also written in TypeScript. The home page
+                animation would not be
+                possible without it. But apart from just the language, the used framework is also important. A framework
+                reduces the time it
+                takes to do the basic things so I can actually focus on the more complicated code. This site uses the
+                Angular framework,
+                allowing the site to be split in smaller chunks and build modulair.
+                <mat-tab-group>
+                    <mat-tab label="All">
+                        <mat-chip-set>
+                            @for (lang of languages; track $index) {
+                            <mat-chip>{{lang.lang}}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    </mat-tab>
+                    <mat-tab label="Backend">
+                        <ng-template matTabContent>
+                            <mat-chip-set>
+                                @for (lang of languages; track $index) {
+                                @if(lang.types.includes("backend")){
+                                <mat-chip>{{lang.lang}}</mat-chip>
+                                }
+                                }
+                            </mat-chip-set>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab label="Frontend">
+                        <ng-template matTabContent>
+                            <mat-chip-set>
+                                @for (lang of languages; track $index) {
+                                @if(lang.types.includes("frontend")){
+                                <mat-chip>{{lang.lang}}</mat-chip>
+                                }
+                                }</mat-chip-set>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab label="Native">
+                        <ng-template matTabContent>
+                            <mat-chip-set>
+                                @for (lang of languages; track $index) {
+                                @if(lang.types.includes("native")){
+                                <mat-chip>{{lang.lang}}</mat-chip>
+                                }
+                                }</mat-chip-set>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab label="Scripting">
+                        <ng-template matTabContent>
+                            <mat-chip-set>
+                                @for (lang of languages; track $index) {
+                                @if(lang.types.includes("scripting")){
+                                <mat-chip>{{lang.lang}}</mat-chip>
+                                }
+                                }
+                            </mat-chip-set>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab label="Database">
+                        <ng-template matTabContent>
+                            <mat-chip-set>
+                                @for (lang of languages; track $index) {
+                                @if(lang.types.includes("database")){
+                                <mat-chip>{{lang.lang}}</mat-chip>
+                                }
+                                }
+                            </mat-chip-set>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
 
-        <h2>My languages</h2>
+        </mat-card>
+    </div>
 
-        <mat-tab-group id="experience-mount">
-            <mat-tab label="All">
-                <mat-chip-set>
-                @for (lang of languages; track $index) {
-                    <mat-chip>{{lang.lang}}</mat-chip>
+    <div class="content-block">
+
+        <h2>Theory and practice</h2>
+
+        <mat-card>
+            <mat-card-content>
+                To become and stay an good software engineer or designer it is required to know the theory, but it is at
+                least as important to have some
+                experience in practical real-world projects. For a list of my projects you can click on the button below
+                or navigate to my projects page.
+                For some other software engineering related experience, take a look below.
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+
+    <div class="content-block">
+        <mat-accordion>
+            @for (experience of experiences; track $index) {
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{experience.title}}
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+                <p>{{experience.time}}</p>
+                <p>{{experience.text}}</p>
+
+                @if (experience.buttons && experience.buttons.length != 0) {
+
+                <mat-card-actions>
+                    @for (button of experience.buttons; track $index) {
+                    <a mat-stroked-button [href]="button.url" target="_blank">
+                        <mat-icon>{{button.icon}}</mat-icon>
+                        {{button.text}}
+                    </a>
+                    }
+                </mat-card-actions>
                 }
-                </mat-chip-set>
-            </mat-tab>
-            <mat-tab label="Backend">
-                <ng-template matTabContent>
-                    <mat-chip-set>
-                    @for (lang of languages; track $index) {
-                        @if(lang.types.includes("backend")){
-                            <mat-chip>{{lang.lang}}</mat-chip>
-                        }
-                    }
-                </mat-chip-set>
-                </ng-template>
-            </mat-tab>
-            <mat-tab label="Frontend">
-                <ng-template matTabContent>
-                    <mat-chip-set>
-                    @for (lang of languages; track $index) {
-                        @if(lang.types.includes("frontend")){
-                            <mat-chip>{{lang.lang}}</mat-chip>
-                        }
-                    }</mat-chip-set>
-                </ng-template>
-            </mat-tab>
-            <mat-tab label="Native">
-                <ng-template matTabContent>
-                    <mat-chip-set>
-                    @for (lang of languages; track $index) {
-                        @if(lang.types.includes("native")){
-                            <mat-chip>{{lang.lang}}</mat-chip>
-                        }
-                    }</mat-chip-set>
-                </ng-template>
-            </mat-tab>
-            <mat-tab label="Scripting">
-                <ng-template matTabContent>
-                    <mat-chip-set>
-                    @for (lang of languages; track $index) {
-                        @if(lang.types.includes("scripting")){
-                            <mat-chip>{{lang.lang}}</mat-chip>
-                        }
-                    }
-                </mat-chip-set>
-                </ng-template>
-            </mat-tab>
-            <mat-tab label="Database">
-                <ng-template matTabContent>
-                    <mat-chip-set>
-                    @for (lang of languages; track $index) {
-                        @if(lang.types.includes("database")){
-                            <mat-chip>{{lang.lang}}</mat-chip>
-                        }
-                    }
-                </mat-chip-set>
-                </ng-template>
-            </mat-tab>
-        </mat-tab-group>
 
-        <h2>My experience</h2>
+            </mat-expansion-panel>
+            }</mat-accordion>
 
-        @for (experience of experiences; track $index) {
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{experience.title}}
-                </mat-panel-title>
-
-            </mat-expansion-panel-header>
-            <p class>{{experience.time}}</p>
-
-            <p>{{experience.text}}</p>
-
-            <mat-card-actions>
-                @for (button of experience.buttons; track $index) {
-                <a mat-stroked-button [href]="button.url" target="_blank">
-                    <mat-icon>{{button.icon}}</mat-icon>
-                    {{button.text}}
-                </a>
-                }
-            </mat-card-actions>
-        </mat-expansion-panel>
-        }
-    </mat-accordion>
+    </div>
 </div>
