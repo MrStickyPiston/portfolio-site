@@ -1,5 +1,5 @@
 export const data = {
-    app_name: "MrStickyPiston portfolio",
+    app_name: "MrStickyPiston",
     home: {
         functions: [
             "full-stack software engineer",
