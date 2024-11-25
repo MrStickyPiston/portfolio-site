@@ -14,5 +14,5 @@
 }
 
 header {
-    height: calc(100vh - 174px);
+    height: max(calc(100vh - 174px), 420px);
 }
