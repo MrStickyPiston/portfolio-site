@@ -30,18 +30,13 @@ export class ProjectsComponent {
             buttons: [
                 {
                     url: 'https://github.com/MrStickyPiston/StickyHours',
-                    text: 'Source code',
+                    text: 'Source',
                     icon: 'code'
                   },
                 {
                     icon: 'web',
-                    text: 'Project page',
+                    text: 'Site',
                     url: '/projects/sticky-hours',
-                },
-                {
-                    icon: 'download',
-                    text: 'Download',
-                    url: '/projects/sticky-hours#installation'
                 }
             ]
         },
