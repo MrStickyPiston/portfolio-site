@@ -19,13 +19,40 @@ import { HeaderComponent } from "./header/header.component";
 export class ProjectsComponent {
     projects = [
         {
+            icon: 'https://flathub.org/_next/image?url=https%3A%2F%2Fdl.flathub.org%2Fmedia%2Fio%2Fgithub%2Fmrstickypiston.stickyhours%2Feb18c196950dc036186d6f0326384d9b%2Ficons%2F128x128%2Fio.github.mrstickypiston.stickyhours.png&w=128&q=100',
+            title: 'Sticky Hours',
+            subtitle: 'App for finding common schedule gaps',
+
+            banner: 'https://res.cloudinary.com/dvtmkwimv/image/upload/f_auto,q_auto,w_3840/StickyHours-screenshot-android-common_hours_menu',
+            banner_alt: 'Sticky Hours android app main menu oriented landscape english light mode',
+            text: 'Sticky Hours is an app designed to find common gaps in secondary school schedules. Useful for finding time to speak someone or work on a project. Do note that the app requires that your school uses Zermelo to schedule, and you need access to it. The app is built in python and is compatible with Android, MacOS, Windows and Linux. On top of that the app uses only one codebase to serve all these platforms, resulting in less code having to be written multiple times and the app functioning the same on every device.',
+
+            buttons: [
+                {
+                    url: 'https://github.com/MrStickyPiston/StickyHours',
+                    text: 'Source code',
+                    icon: 'code'
+                  },
+                {
+                    icon: 'web',
+                    text: 'Project page',
+                    url: '/projects/sticky-hours',
+                },
+                {
+                    icon: 'download',
+                    text: 'Download',
+                    url: '/projects/sticky-hours#installation'
+                }
+            ]
+        },
+        {
             icon: 'https://www.fcbo.nl/favicon.ico',
             title: 'Fotoclub Borger-Odoorn',
             subtitle: 'Frontend & backend for a dutch Photo club',
 
             banner: 'https://www.fcbo.nl/socialCard.png',
             banner_alt: 'Project photo club borger odoorn social card',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'This site was made for a photo club in the Netherlands, the text on the site is Dutch. The site has an advanced admin panel for uploading photos, editing blogs, club meeting notes and users that can view that notes. All photos automatically get processed to reduce disk space and keep the site snappy, but on a way that all quality is preserved.',
 
             buttons: [
                 {
@@ -81,7 +108,7 @@ export class ProjectsComponent {
 
             banner: 'https://www.codecup.nl/images/logo_nio_tekst.png',
             banner_alt: 'Project NIO round 1, 2; nederlandse informaticaolympiade banner',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the HPG (see button) i can study informatica myself and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round.',
 
             buttons: [
                 {
@@ -125,7 +152,7 @@ export class ProjectsComponent {
 
             banner: '/assets/SudokuSolver_banner.png',
             banner_alt: 'Project SudokuSolver webui',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'Sudoku\'s are an interesting puzzle to solve. But even more interesting is finding a way to solve them automatically, and fast. If that is accomplished, it is also needs to be user friendly enough to actually use. This was accomplished by building a web interface using the angular framework. The actual processing is done on a server based on the spring framework, using an algoritm that runs a pruned complete-search.',
 
             buttons: [
                 {
@@ -142,7 +169,7 @@ export class ProjectsComponent {
 
             banner: 'https://cdn.modrinth.com/data/L524D8Os/images/a314cb72ef142e6ab91d8976a59610f33611dc4a.png',
             banner_alt: 'Minecraft fabric builders jetpack mod floating jetpack',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'Builders Jetpack is a minecraft mod that adds a jetpack to the game. Most jetpack mods are made to be very much like a real-life jetpack, resulting in a very wobbly flight. It is almost impossible to build with that. This mod fixes that problem and keeps the player stable in the air.',
 
             buttons: [
                 {
@@ -164,7 +191,7 @@ export class ProjectsComponent {
 
             banner: '/assets/BilingualHangman_banner.png',
             banner_alt: 'Bilingual hangman window 4 correct 2 errors',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'Bilingual hangman is a educative hangman game designed to use for learning languages. The way it works is both the word in the first language and the word in the second language are put on the screen but with all letters swapped with "_". After that, the player can guess a letter. If it is in one of the two translations it will replace the "_" on the place of that letter in both translations. Else the player loses a live.',
 
             buttons: [
                 {
@@ -181,7 +208,7 @@ export class ProjectsComponent {
 
             banner: '/assets/stickyclicker_banner.png',
             banner_alt: 'Stickyclicker autoclicker GUI on kubuntu 22.04 LTS',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+            text: 'StickyClicker is an autoclicker tool for Windows and Linux with an interface written in customtkinter. It allows clicking for a specefied amount of time on keybind press or until the next keybind press. The autoclicker also has options for randomnes and clicks-per-second. This allows using the autoclicker for various things.',
 
             buttons: [
                 {

@@ -171,7 +171,7 @@ export class ProjectPageComponent {
                     type: ItemType.Buttons,
                     buttons: [
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Windows.zip',
+                        url: 'https://github.com/MrStickyPiston/StickyHours/releases/latest/download/StickyHours-Windows.zip',
                         text: 'Sticky Hours for Windows',
                         icon: 'download'
                       }
@@ -190,7 +190,7 @@ export class ProjectPageComponent {
                     type: ItemType.Buttons,
                     buttons: [
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-macOS.zip',
+                        url: 'https://github.com/MrStickyPiston/StickyHours/releases/latest/download/StickyHours-macOS.zip',
                         text: 'MacOS',
                         icon: 'download'
                       },
@@ -220,12 +220,12 @@ export class ProjectPageComponent {
                         icon: 'download'
                       },
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
+                        url: 'https://github.com/MrStickyPiston/StickyHours/releases/latest/download/StickyHours-Ubuntu-24.04.zip',
                         text: 'Sticky Hours for Ubuntu 24.04 LTS',
                         icon: 'download'
                       },
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/releases/latest/download/StickyHours-Fedora-40.zip',
+                        url: 'https://github.com/MrStickyPiston/StickyHours/releases/latest/download/StickyHours-Fedora-40.zip',
                         text: 'Sticky Hours for Fedora 40',
                         icon: 'download'
                       }
@@ -373,12 +373,12 @@ export class ProjectPageComponent {
                     type: ItemType.Buttons,
                     buttons: [
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app',
+                        url: 'https://github.com/MrStickyPiston/StickyHours',
                         text: 'Source code',
                         icon: 'code'
                       },
                       {
-                        url: 'https://github.com/MrStickyPiston/CommonFreeHours-app/issues',
+                        url: 'https://github.com/MrStickyPiston/StickyHours/issues',
                         text: 'Issue tracker',
                         icon: 'adjust'
                       },
