@@ -25,11 +25,21 @@
 
       <div class="d-only">
         @for (page of navpages; track $index) {
-          <a mat-button 
+          @if (page.route == '/') {
+            <a mat-button 
             [routerLink]="page.route" 
-          >
+            routerLinkActive="active-route"
+            [routerLinkActiveOptions]="{exact: true}">
             {{page.text}}
           </a>
+          } @else {
+
+          <a mat-button 
+            [routerLink]="page.route" 
+            routerLinkActive="active-route">
+            {{page.text}}
+          </a>
+        }
         }
 
         <button mat-button (click)="toggle_dark_mode()" class="theme-toggle">

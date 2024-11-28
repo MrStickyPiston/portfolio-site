@@ -34,6 +34,12 @@ a+a {
   margin-left: 16px;
 }
 
+::ng-deep {
+  .active-route .mat-mdc-button-persistent-ripple::before {
+    opacity: var(--mat-text-button-hover-state-layer-opacity) !important;
+  }
+}
+
 @media (max-width: 600px) {
   .mat-toolbar-single-row {
     padding: 0;
