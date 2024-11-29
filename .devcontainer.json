@@ -2,8 +2,7 @@
     "name": "Angular (MrStickyPiston.is-a.dev)",
     "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node",
     "features": {
-        "node": "22",
-        "git": "latest"
+        "node": "22"
     },
     "customizations": {
         "vscode": {
