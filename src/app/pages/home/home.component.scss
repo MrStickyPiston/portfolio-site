@@ -14,5 +14,9 @@
 }
 
 header {
-    height: max(calc(100vh - 174px), 420px);
+    height: 100vh;
+
+    .header-content {
+        padding-bottom: 10%;
+    }
 }
