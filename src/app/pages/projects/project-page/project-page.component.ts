@@ -144,27 +144,6 @@ export class ProjectPageComponent {
             id: 'installation',
             subsections: [
               {
-                name: 'Android',
-                items: [
-                  {
-                    type: ItemType.Images,
-                    images: [
-                      {
-                        url: 'GetItOnGooglePlay_Badge_Web_color_English',
-                        href: 'https://play.google.com/store/apps/details?id=io.github.mrstickypiston.stickyhours',
-                        width: 140,
-                        height: 41.5,
-                        resize: false
-                      },
-                    ]
-                  },
-                  {
-                    type: ItemType.Text,
-                    text: 'On Android you can install the app on Google Play using the link above. After you click install the play store will install the app for you. Once the app is installed, you can continue to the "Quick start" section below.'
-                  }
-                ]
-              },
-              {
                 name: 'Windows',
                 items: [
                   {
@@ -184,7 +163,7 @@ export class ProjectPageComponent {
                 ]
               },
               {
-                name: 'Sticky Hours for MacOS',
+                name: 'MacOS',
                 items: [
                   {
                     type: ItemType.Buttons,
@@ -235,6 +214,25 @@ export class ProjectPageComponent {
                     type: ItemType.Text,
                     text: 'On Linux you can install Sticky Hours sandboxed using flatpak and using Ubuntu/Fedora system packages. Please pick the package you want to use and download it from the download section above. Install the package using your package manager and open the app. You will see the login screen, where you can enter your Zermelo portal id and linkcode (NOT your username and password). For instructions on how to find your Zermelo portal id or linkcode, see the FaQ below.'
                   }
+                ]
+              },
+              {
+                name: 'Web',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'Click on the button below to open Sticky Hours Web. On chromium based browsers and safari it is also possible to install Sticky Hours Web as normal app.'
+                  },
+                  {
+                    type: ItemType.Buttons,
+                    buttons: [
+                      {
+                        url: 'https://stickyhours.pages.dev/',
+                        text: 'Sticky Hours Web',
+                        icon: 'open_in_new'
+                      }
+                    ]
+                  },
                 ]
               },
             ]
@@ -353,7 +351,16 @@ export class ProjectPageComponent {
                 items: [
                   {
                     type: ItemType.Text,
-                    text: 'Unfortunately iOS requires apps to pay 100 USD yearly to even build a production ready .ipa (iOS app installation bundle), so no official release build is provided. However, you can try building the app yourself for your own iPhone or iPad.'
+                    text: 'Unfortunately iOS requires apps to pay 100 USD yearly to even build a production ready .ipa (iOS app installation bundle), so no official release build is provided. The Web version is recommended for iOS users, and can even be installed when using a chromium based browser or safari.'
+                  }
+                ]
+              },
+              {
+                name: 'Why is ther no Android version?',
+                items: [
+                  {
+                    type: ItemType.Text,
+                    text: 'A native Android app is available as apk on github but wont be published due to google forcing developers to publish private information when creating a google play developer account. The Web version is recommended for Android users, and can even be installed when using a chromium based browser.'
                   }
                 ]
               }
