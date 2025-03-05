@@ -97,28 +97,6 @@ export class ProjectsComponent {
             ]
         },
         {
-            icon: 'https://www.informaticaolympiade.nl/wp-content/uploads/2016/08/cropped-NIO_logo_website_blauw-32x32.png',
-            title: 'NIO 2024 round 1&2',
-            subtitle: 'Dutch olympiad of informatics',
-
-            banner: 'https://www.codecup.nl/images/logo_nio_tekst.png',
-            banner_alt: 'Project NIO round 1, 2; nederlandse informaticaolympiade banner',
-            text: 'NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the HPG (see button) i can study informatica myself and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round.',
-
-            buttons: [
-                {
-                    icon: 'code',
-                    text: 'Source',
-                    url: 'https://github.com/MrStickyPiston/NIO-1-2024',
-                },
-                {
-                    icon: 'web',
-                    text: 'NIO Site',
-                    url: 'https://www.informaticaolympiade.nl/',
-                }
-            ]
-        },
-        {
             icon: 'https://cdn.modrinth.com/data/ihpnEd80/3b04d5b3830e1f685d78fa765f928d94f11f5d65_96.webp',
             title: 'Create Cobblestone',
             subtitle: 'Cobblestone generators for the Minecraft Create mod',

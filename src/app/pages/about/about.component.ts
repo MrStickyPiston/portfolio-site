@@ -8,6 +8,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutHeaderComponent } from './header/header.component';
 import { MatTabsModule } from '@angular/material/tabs'
 import { UtilsService } from '../../services/utils.service';
+import { title } from 'node:process';
+import { time } from 'node:console';
 
 @Component({
     selector: 'app-about',
@@ -92,6 +94,11 @@ export class AboutComponent {
         }
       ],
     },
+    {
+      title: "NIO: Dutch olympiad of informatics",
+      time: "2024 & 2025",
+      text: "NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the Honours Programme (see above) i can study informatica myself and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round. Both of the times I participated in round one I also participated in round two, but i was not able to get to the third round and international competitions."
+    }
   ]
 
   languages = [
