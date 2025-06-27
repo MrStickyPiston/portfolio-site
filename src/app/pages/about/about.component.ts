@@ -8,18 +8,15 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AboutHeaderComponent } from './header/header.component';
 import { MatTabsModule } from '@angular/material/tabs'
 import { UtilsService } from '../../services/utils.service';
-import { title } from 'node:process';
-import { time } from 'node:console';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.scss',
-    imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
+  imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
 })
 export class AboutComponent {
-  panelOpenState = false;
   scrollTo!: Function;
 
   constructor(
@@ -32,9 +29,7 @@ export class AboutComponent {
     {
       title: "Coderdojo",
       time: "2016 - 2019",
-      text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis erat, pellentesque quis aliquet et, euismod in ex. In malesuada sed ante id sodales. Vivamus nec diam sit amet leo pharetra viverra. Sed vitae dolor nisi. Integer accumsan, nisi id egestas vulputate, dolor purus congue metus, eget semper libero arcu non augue. Praesent tempor velit neque, et ultricies elit pharetra quis. Phasellus in felis at tellus rhoncus interdum. Nam porttitor non magna quis tempus. Pellentesque dignissim, purus sed molestie venenatis, neque mi blandit ipsum, id mattis libero lorem sed ipsum. Cras et cursus nunc.
-
-      Sed id mauris ullamcorper, eleifend libero eget, dapibus dui. Phasellus gravida est vitae nisi porttitor, quis blandit lectus porta. Quisque leo diam, finibus eget tempus at, pretium at nibh. Fusce luctus nibh ut suscipit efficitur. Donec tortor tortor, luctus sed dapibus facilisis, venenatis at nibh. Ut pharetra erat in purus fermentum sodales. Donec posuere convallis velit, id scelerisque dolor. Fusce blandit, tellus sit amet dapibus tristique, mauris ligula venenatis diam, ut faucibus nulla lectus a metus. Nam tincidunt vel sapien sit amet molestie. Vivamus accumsan sem enim, et elementum purus interdum at. Aliquam vitae arcu in nulla varius tempor. Quisque leo velit, lacinia maximus iaculis id, accumsan in leo. Aliquam pharetra interdum lorem eu sagittis. Integer tristique turpis eget velit dignissim tempor. Maecenas commodo aliquam erat, sed tempor magna pretium imperdiet. `,
+      text: `Coderdojo is an event for children about programming and other tech. I started going there when i was 7, and continued until I was 10. My first "programming language" at Coderdojo was scratch, and later on I continued with python. This event could no longer be organized during the pandemic, and thus I had to stop. I did continue programming on myself though.`,
       buttons: [
         {
           icon: 'web',
@@ -44,25 +39,14 @@ export class AboutComponent {
       ],
     },
     {
-      title: `"Centrum voor talentontwikkeling" `,
+      title: `"Centrum voor talentontwikkeling"`,
       time: "2016 - 2019",
-      text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis erat, pellentesque quis aliquet et, euismod in ex. In malesuada sed ante id sodales. Vivamus nec diam sit amet leo pharetra viverra. Sed vitae dolor nisi. Integer accumsan, nisi id egestas vulputate, dolor purus congue metus, eget semper libero arcu non augue. Praesent tempor velit neque, et ultricies elit pharetra quis. Phasellus in felis at tellus rhoncus interdum. Nam porttitor non magna quis tempus. Pellentesque dignissim, purus sed molestie venenatis, neque mi blandit ipsum, id mattis libero lorem sed ipsum. Cras et cursus nunc.
-
-      Sed id mauris ullamcorper, eleifend libero eget, dapibus dui. Phasellus gravida est vitae nisi porttitor, quis blandit lectus porta. Quisque leo diam, finibus eget tempus at, pretium at nibh. Fusce luctus nibh ut suscipit efficitur. Donec tortor tortor, luctus sed dapibus facilisis, venenatis at nibh. Ut pharetra erat in purus fermentum sodales. Donec posuere convallis velit, id scelerisque dolor. Fusce blandit, tellus sit amet dapibus tristique, mauris ligula venenatis diam, ut faucibus nulla lectus a metus. Nam tincidunt vel sapien sit amet molestie. Vivamus accumsan sem enim, et elementum purus interdum at. Aliquam vitae arcu in nulla varius tempor. Quisque leo velit, lacinia maximus iaculis id, accumsan in leo. Aliquam pharetra interdum lorem eu sagittis. Integer tristique turpis eget velit dignissim tempor. Maecenas commodo aliquam erat, sed tempor magna pretium imperdiet. `,
-      buttons: [
-        {
-          icon: 'web',
-          text: 'Coderdojo Site',
-          url: 'https://coderdojo.com/en',
-        }
-      ],
+      text: `After I programmed an app that let my classmates practice their multiplication tables my school decided that I should get supported developing my talents. Because of this, my school asked the "Centrum voor talentontwikkeling" to help with that. One afternoon a week someone would teach me logic and programming in JavaScript. This also stopped with the pandemic.`,
     },
     {
       title: "Honours Programme",
       time: "2023 - NOW",
-      text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis erat, pellentesque quis aliquet et, euismod in ex. In malesuada sed ante id sodales. Vivamus nec diam sit amet leo pharetra viverra. Sed vitae dolor nisi. Integer accumsan, nisi id egestas vulputate, dolor purus congue metus, eget semper libero arcu non augue. Praesent tempor velit neque, et ultricies elit pharetra quis. Phasellus in felis at tellus rhoncus interdum. Nam porttitor non magna quis tempus. Pellentesque dignissim, purus sed molestie venenatis, neque mi blandit ipsum, id mattis libero lorem sed ipsum. Cras et cursus nunc.
-
-      Sed id mauris ullamcorper, eleifend libero eget, dapibus dui. Phasellus gravida est vitae nisi porttitor, quis blandit lectus porta. Quisque leo diam, finibus eget tempus at, pretium at nibh. Fusce luctus nibh ut suscipit efficitur. Donec tortor tortor, luctus sed dapibus facilisis, venenatis at nibh. Ut pharetra erat in purus fermentum sodales. Donec posuere convallis velit, id scelerisque dolor. Fusce blandit, tellus sit amet dapibus tristique, mauris ligula venenatis diam, ut faucibus nulla lectus a metus. Nam tincidunt vel sapien sit amet molestie. Vivamus accumsan sem enim, et elementum purus interdum at. Aliquam vitae arcu in nulla varius tempor. Quisque leo velit, lacinia maximus iaculis id, accumsan in leo. Aliquam pharetra interdum lorem eu sagittis. Integer tristique turpis eget velit dignissim tempor. Maecenas commodo aliquam erat, sed tempor magna pretium imperdiet. `,
+      text: `Halfway through secondary school i once again got the opportunity to show talent by joining the Honours Programme (HPG). The HPG allows students to do something beyond the usual, not necessarily related to the subjects taught at school. The topic of my HPG was, of course, software. This HPG allowed me to get into an internship at a government organisation, the DUO.`,
       buttons: [
         {
           icon: 'web',
@@ -72,20 +56,16 @@ export class AboutComponent {
       ],
     },
     {
-      title: "Traineeship at DUO",
+      title: "Internship at DUO",
       time: "2023 - NOW",
-      text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis erat, pellentesque quis aliquet et, euismod in ex. In malesuada sed ante id sodales. Vivamus nec diam sit amet leo pharetra viverra. Sed vitae dolor nisi. Integer accumsan, nisi id egestas vulputate, dolor purus congue metus, eget semper libero arcu non augue. Praesent tempor velit neque, et ultricies elit pharetra quis. Phasellus in felis at tellus rhoncus interdum. Nam porttitor non magna quis tempus. Pellentesque dignissim, purus sed molestie venenatis, neque mi blandit ipsum, id mattis libero lorem sed ipsum. Cras et cursus nunc.
-
-      Sed id mauris ullamcorper, eleifend libero eget, dapibus dui. Phasellus gravida est vitae nisi porttitor, quis blandit lectus porta. Quisque leo diam, finibus eget tempus at, pretium at nibh. Fusce luctus nibh ut suscipit efficitur. Donec tortor tortor, luctus sed dapibus facilisis, venenatis at nibh. Ut pharetra erat in purus fermentum sodales. Donec posuere convallis velit, id scelerisque dolor. Fusce blandit, tellus sit amet dapibus tristique, mauris ligula venenatis diam, ut faucibus nulla lectus a metus. Nam tincidunt vel sapien sit amet molestie. Vivamus accumsan sem enim, et elementum purus interdum at. Aliquam vitae arcu in nulla varius tempor. Quisque leo velit, lacinia maximus iaculis id, accumsan in leo. Aliquam pharetra interdum lorem eu sagittis. Integer tristique turpis eget velit dignissim tempor. Maecenas commodo aliquam erat, sed tempor magna pretium imperdiet. `,
+      text: `DUO is a Dutch government organisation responsible for the execution of education. This internship taught me good standards and best practices, and introduced me to major frameworks. I also learned to cooperate in a team, and other communicational skills.`,
       buttons: [
       ],
     },
     {
       title: "Comission: Fotoclub Borger-odoorn",
       time: "2023 - 2024",
-      text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis erat, pellentesque quis aliquet et, euismod in ex. In malesuada sed ante id sodales. Vivamus nec diam sit amet leo pharetra viverra. Sed vitae dolor nisi. Integer accumsan, nisi id egestas vulputate, dolor purus congue metus, eget semper libero arcu non augue. Praesent tempor velit neque, et ultricies elit pharetra quis. Phasellus in felis at tellus rhoncus interdum. Nam porttitor non magna quis tempus. Pellentesque dignissim, purus sed molestie venenatis, neque mi blandit ipsum, id mattis libero lorem sed ipsum. Cras et cursus nunc.
-
-      Sed id mauris ullamcorper, eleifend libero eget, dapibus dui. Phasellus gravida est vitae nisi porttitor, quis blandit lectus porta. Quisque leo diam, finibus eget tempus at, pretium at nibh. Fusce luctus nibh ut suscipit efficitur. Donec tortor tortor, luctus sed dapibus facilisis, venenatis at nibh. Ut pharetra erat in purus fermentum sodales. Donec posuere convallis velit, id scelerisque dolor. Fusce blandit, tellus sit amet dapibus tristique, mauris ligula venenatis diam, ut faucibus nulla lectus a metus. Nam tincidunt vel sapien sit amet molestie. Vivamus accumsan sem enim, et elementum purus interdum at. Aliquam vitae arcu in nulla varius tempor. Quisque leo velit, lacinia maximus iaculis id, accumsan in leo. Aliquam pharetra interdum lorem eu sagittis. Integer tristique turpis eget velit dignissim tempor. Maecenas commodo aliquam erat, sed tempor magna pretium imperdiet. `,
+      text: `This site was my first paid commission. The site consists out of a backend and a frontend. The backend is written in python and flask, and the frontend using typescript and angular. In addition to the programming I also learned a lot about requirements engineering and making an application user friendly.`,
       buttons: [
         {
           icon: 'web',
@@ -97,16 +77,13 @@ export class AboutComponent {
     {
       title: "NIO: Dutch olympiad of informatics",
       time: "2024 & 2025",
-      text: "NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the Honours Programme (see above) i can study informatica myself and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round. Both of the times I participated in round one I also participated in round two, but i was not able to get to the third round and international competitions."
+      text: "NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the Honours Programme (see above) i can self study informatica and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round. Both of the times I participated in round one I also participated in round two, but i was not able to get to the third round and international competitions."
     }
   ]
 
   languages = [
     {
       lang: "Java",
-      frameworks: [
-        "Spring boot", "Minecraft fabric"
-      ],
       types: [
         "native", "backend"
       ]
@@ -193,6 +170,12 @@ export class AboutComponent {
       lang: "SASS",
       types: [
         "frontend"
+      ]
+    },
+    {
+      lang: "Rust",
+      types: [
+        "backend", "native"
       ]
     }
   ]
