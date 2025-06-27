@@ -12,24 +12,23 @@ import { ApiService } from '../../services/api/api.service';
 import { ContactHeaderComponent } from './header/header.component';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [ContactHeaderComponent,
-    MatStepperModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-  ],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
-  providers: [
-    {
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: { showError: true },
-    },
-  ]
+    selector: 'app-contact',
+    imports: [ContactHeaderComponent,
+        MatStepperModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+    ],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.scss',
+    providers: [
+        {
+            provide: STEPPER_GLOBAL_OPTIONS,
+            useValue: { showError: true },
+        },
+    ]
 })
 export class ContactComponent {
 

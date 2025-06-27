@@ -12,19 +12,18 @@ import { filter } from 'rxjs';
 import { Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    RouterModule,
-    FooterComponent
-  ]
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.scss',
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        RouterModule,
+        FooterComponent
+    ]
 })
 export class NavComponent {
   navpages = data.nav;

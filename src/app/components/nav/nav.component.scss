@@ -36,7 +36,7 @@ a+a {
 
 ::ng-deep {
   .active-route .mat-mdc-button-persistent-ripple::before {
-    opacity: var(--mat-text-button-hover-state-layer-opacity) !important;
+    opacity: var(--mat-button-text-hover-state-layer-opacity) !important;
   }
 }
 

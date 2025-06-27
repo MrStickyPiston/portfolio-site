@@ -6,7 +6,6 @@ import { HeaderComponent } from "./header/header.component";
 
 @Component({
     selector: 'app-projects',
-    standalone: true,
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss',
     imports: [

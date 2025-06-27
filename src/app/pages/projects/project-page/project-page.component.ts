@@ -9,21 +9,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { E404Component } from '../../error/e404/e404.component';
 
 @Component({
-  selector: 'app-project-page',
-  standalone: true,
-  imports: [
-    NgOptimizedImage,
-    ProjectPageHeaderComponent,
-    MatButtonModule,
-    MatIconModule,
-    MatChipsModule,
-    E404Component
-  ],
-  templateUrl: './project-page.component.html',
-  styleUrl: './project-page.component.scss',
-  providers: [
-    provideCloudinaryLoader('https://res.cloudinary.com/dvtmkwimv/'),
-  ]
+    selector: 'app-project-page',
+    imports: [
+        NgOptimizedImage,
+        ProjectPageHeaderComponent,
+        MatButtonModule,
+        MatIconModule,
+        MatChipsModule,
+        E404Component
+    ],
+    templateUrl: './project-page.component.html',
+    styleUrl: './project-page.component.scss',
+    providers: [
+        provideCloudinaryLoader('https://res.cloudinary.com/dvtmkwimv/'),
+    ]
 })
 
 export class ProjectPageComponent {

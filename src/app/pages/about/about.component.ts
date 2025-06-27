@@ -11,10 +11,9 @@ import { UtilsService } from '../../services/utils.service';
 
 @Component({
     selector: 'app-about',
-    standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.scss',
-  imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
+    imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
 })
 export class AboutComponent {
   scrollTo!: Function;

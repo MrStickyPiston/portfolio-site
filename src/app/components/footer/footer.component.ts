@@ -5,14 +5,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog'
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [
-    // Angular material
-    MatCardModule
-  ],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+    selector: 'app-footer',
+    imports: [
+        // Angular material
+        MatCardModule
+    ],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
 

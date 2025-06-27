@@ -4,11 +4,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { UtilsService } from '../../../services/utils.service';
 
 @Component({
-  selector: 'app-about-header',
-  standalone: true,
-  imports: [MatButtonModule, MatIconModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-about-header',
+    imports: [MatButtonModule, MatIconModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class AboutHeaderComponent {
   scrollTo: Function;

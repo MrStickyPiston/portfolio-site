@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,22 +13,20 @@ import {
 import { data } from '../../../environments/data';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
+    selector: 'app-home',
+    imports: [
     MatButtonModule,
     MatIconModule,
-    RouterModule,
-    CommonModule
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  animations: [
-    slideInLeftOnEnterAnimation({translate: '5em', duration: 700, delay: 350}),
-    fadeInOnEnterAnimation({duration: 700, delay: 350}),
-    slideOutRightOnLeaveAnimation({translate: '5em', duration: 700}),
-    fadeOutOnLeaveAnimation({duration: 700}),
-  ],
+    RouterModule
+],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    animations: [
+        slideInLeftOnEnterAnimation({ translate: '5em', duration: 700, delay: 350 }),
+        fadeInOnEnterAnimation({ duration: 700, delay: 350 }),
+        slideOutRightOnLeaveAnimation({ translate: '5em', duration: 700 }),
+        fadeOutOnLeaveAnimation({ duration: 700 }),
+    ]
 })
 export class HomeComponent {
   
