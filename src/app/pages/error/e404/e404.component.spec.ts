@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { E404Component } from './e404.component';
+import {E404Component} from './e404.component';
 
 describe('E404Component', () => {
   let component: E404Component;
@@ -10,8 +10,8 @@ describe('E404Component', () => {
     await TestBed.configureTestingModule({
       imports: [E404Component]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(E404Component);
     component = fixture.componentInstance;
     fixture.detectChanges();

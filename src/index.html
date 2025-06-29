@@ -5,20 +5,24 @@
   <meta charset="utf-8">
   <title>Portfolio</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="darkreader-lock">
 
-  <link rel="preconnect" href="https://res.cloudinary.com/dvtmkwimv">
+  <link href="https://res.cloudinary.com/dvtmkwimv" rel="preconnect">
 
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J36DRX7JG4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-J36DRX7JG4');
@@ -27,7 +31,7 @@
 </head>
 
 <body class="mat-app-background mat-typography">
-  <app-root></app-root>
+<app-root></app-root>
 </body>
 
 </html>

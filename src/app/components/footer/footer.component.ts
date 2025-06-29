@@ -1,17 +1,14 @@
-import { ComponentType } from '@angular/cdk/portal';
-import { Component, TemplateRef } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog'
+import {Component} from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
-    selector: 'app-footer',
-    imports: [
-        // Angular material
-        MatCardModule
-    ],
-    templateUrl: './footer.component.html',
-    styleUrl: './footer.component.scss'
+  selector: 'app-footer',
+  imports: [
+    // Angular material
+    MatCardModule
+  ],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
 

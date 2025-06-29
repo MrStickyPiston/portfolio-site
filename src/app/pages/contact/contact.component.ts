@@ -1,34 +1,32 @@
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { Component } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import {
-  MatSnackBar
-} from '@angular/material/snack-bar';
-import { MatStepperModule } from '@angular/material/stepper';
-import { ApiService } from '../../services/api/api.service';
-import { ContactHeaderComponent } from './header/header.component';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {Component} from '@angular/core';
+import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+import {ApiService} from '../../services/api/api.service';
+import {ContactHeaderComponent} from './header/header.component';
 
 @Component({
-    selector: 'app-contact',
-    imports: [ContactHeaderComponent,
-        MatStepperModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-    ],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.scss',
-    providers: [
-        {
-            provide: STEPPER_GLOBAL_OPTIONS,
-            useValue: { showError: true },
-        },
-    ]
+  selector: 'app-contact',
+  imports: [ContactHeaderComponent,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {showError: true},
+    },
+  ]
 })
 export class ContactComponent {
 
@@ -49,7 +47,8 @@ export class ContactComponent {
     private _formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
     private api: ApiService
-  ) { }
+  ) {
+  }
 
   capitalizeFirstLetter(s: string) {
     s = s.trim()

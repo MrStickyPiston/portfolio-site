@@ -1,48 +1,48 @@
-<mat-sidenav-container class="sidenav-container" [class.dark-theme]="dark_mode">
+<mat-sidenav-container [class.dark-theme]="dark_mode" class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      role="dialog"
-      mode="over">
+               mode="over"
+               role="dialog">
     <mat-nav-list>
       @for (page of navpages; track $index) {
-        <a mat-list-item [routerLink]="page.route">{{page.text}}</a>
+        <a mat-list-item [routerLink]="page.route">{{ page.text }}</a>
       }
-      <a mat-list-item (click)="toggle_dark_mode()">Toggle dark mode</a>
+      <a (click)="toggle_dark_mode()" mat-list-item>Toggle dark mode</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content #sidenavContent>
     <mat-toolbar color="primary">
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          class="m-only"
-          (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-      <span>{{app_name}}</span>
+      <button
+        (click)="drawer.toggle()"
+        aria-label="Toggle sidenav"
+        class="m-only"
+        mat-icon-button
+        type="button">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{ app_name }}</span>
 
       <div class="spacer"></div>
 
       <div class="d-only">
         @for (page of navpages; track $index) {
           @if (page.route == '/') {
-            <a mat-button 
-            [routerLink]="page.route" 
-            routerLinkActive="active-route"
-            [routerLinkActiveOptions]="{exact: true}">
-            {{page.text}}
-          </a>
+            <a mat-button
+               [routerLink]="page.route"
+               routerLinkActive="active-route"
+               [routerLinkActiveOptions]="{exact: true}">
+              {{ page.text }}
+            </a>
           } @else {
 
-          <a mat-button 
-            [routerLink]="page.route" 
-            routerLinkActive="active-route">
-            {{page.text}}
-          </a>
-        }
+            <a mat-button
+               [routerLink]="page.route"
+               routerLinkActive="active-route">
+              {{ page.text }}
+            </a>
+          }
         }
 
-        <button mat-button (click)="toggle_dark_mode()" class="theme-toggle">
+        <button (click)="toggle_dark_mode()" class="theme-toggle" mat-button>
           Theme
           @if (dark_mode) {
             <mat-icon>dark_mode</mat-icon>

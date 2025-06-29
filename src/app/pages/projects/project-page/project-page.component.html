@@ -1,69 +1,76 @@
 @if (error_404) {
-    <app-e404></app-e404>
+  <app-e404></app-e404>
 } @else {
-<app-project-page-header [data]="data.header"></app-project-page-header>
+  <app-project-page-header [data]="data.header"></app-project-page-header>
 
-<div class="page-content">
+  <div class="page-content">
     <div class="content-block">
 
-        @for (section of data.sections; track $index) {
-            
-            <div class="section-box">
-            <h2 id="{{section.id}}">{{section.name}}</h2>
+      @for (section of data.sections; track $index) {
 
-                @for (subsection of section.subsections; track $index) {
-                    <div class="subsection-box">
+        <div class="section-box">
+          <h2 id="{{section.id}}">{{ section.name }}</h2>
 
-                        @if (subsection.name) {
-                            <h3 id="{{subsection.id}}" class="subsection-header">{{subsection.name}}</h3>
+          @for (subsection of section.subsections; track $index) {
+            <div class="subsection-box">
+
+              @if (subsection.name) {
+                <h3 id="{{subsection.id}}" class="subsection-header">{{ subsection.name }}</h3>
+              }
+
+              @for (item of subsection.items; track $index) {
+                <div class="item-box">
+                  @switch (item.type) {
+
+                    @case (itemType.Text) {
+                      <p>{{ item.text }}</p>
+                    }
+                    @case (itemType.Images) {
+                      <div class="image-container">
+                        @for (image of item.images; track $index) {
+
+                          @if (image.href) {
+                            <a [href]="image.href">
+                              <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt"
+                                   sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''"
+                                   [priority]="image.priority ? 'true' : 'false'">
+                            </a>
+                          } @else {
+                            <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt"
+                                 sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''"
+                                 [priority]="image.priority ? 'true' : 'false'">
+                          }
                         }
+                      </div>
+                    }
+                    @case (itemType.Buttons) {
+                      <div class="buttons-box">
+                        @for (button of item.buttons; track $index) {
+                          <a mat-flat-button [href]="button.url" target="_blank">
+                            {{ button.text }}
 
-                        @for (item of subsection.items; track $index) {
-                            <div class="item-box">
-                            @switch (item.type) {
-
-                                @case (itemType.Text) {
-                                    <p>{{item.text}}</p>
-                                } @case (itemType.Images) {
-                                    <div class="image-container">
-                                        @for (image of item.images; track $index) {
-                                            
-                                            @if (image.href) {
-                                                <a [href]="image.href">
-                                                    <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''" [priority]="image.priority ? 'true' : 'false'">
-                                                </a> 
-                                            } @else {
-                                                <img [ngSrc]="image.url" [width]="image.width" [height]="image.height" [alt]="image.alt" sizes="100vw" [className]="(image.resize !== !1) ? 'resize' : ''" [priority]="image.priority ? 'true' : 'false'">
-                                            }
-                                        }
-                                    </div>
-                                } @case (itemType.Buttons) {
-                                    <div class="buttons-box">
-                                        @for (button of item.buttons; track $index) {
-                                            <a mat-flat-button [href]="button.url" target="_blank">
-                                                {{button.text}}
-
-                                                @if (button.icon) {
-                                                <mat-icon>{{button.icon}}</mat-icon>
-                                                }
-                                            </a>
-                                        }
-                                    </div>
-                                } @case (itemType.Chips) {
-                                    <mat-chip-set>
-                                        @for (chip of item.chips; track $index) {
-                                            <mat-chip>{{chip}}</mat-chip>
-                                        }
-                                    </mat-chip-set>
-                                }
+                            @if (button.icon) {
+                              <mat-icon>{{ button.icon }}</mat-icon>
                             }
-                            </div>
+                          </a>
                         }
-                    </div>
-                }
+                      </div>
+                    }
+                    @case (itemType.Chips) {
+                      <mat-chip-set>
+                        @for (chip of item.chips; track $index) {
+                          <mat-chip>{{ chip }}</mat-chip>
+                        }
+                      </mat-chip-set>
+                    }
+                  }
+                </div>
+              }
             </div>
-        }
+          }
+        </div>
+      }
 
     </div>
-</div>
+  </div>
 }

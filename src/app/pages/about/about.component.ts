@@ -1,29 +1,22 @@
-import { Component } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips'
-import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { AboutHeaderComponent } from './header/header.component';
-import { MatTabsModule } from '@angular/material/tabs'
-import { UtilsService } from '../../services/utils.service';
+import {Component} from '@angular/core';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips'
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {AboutHeaderComponent} from './header/header.component';
+import {MatTabsModule} from '@angular/material/tabs'
+import {UtilsService} from '../../services/utils.service';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrl: './about.component.scss',
-    imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss',
+  imports: [MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule, AboutHeaderComponent, MatChipsModule, MatButtonToggleModule, MatTabsModule]
 })
 export class AboutComponent {
   scrollTo!: Function;
-
-  constructor(
-    utilsService: UtilsService
-  ){
-    this.scrollTo = utilsService.scrollTo
-  };
-
   experiences = [
     {
       title: "Coderdojo",
@@ -58,8 +51,7 @@ export class AboutComponent {
       title: "Internship at DUO",
       time: "2023 - NOW",
       text: `DUO is a Dutch government organisation responsible for the execution of education. This internship taught me good standards and best practices, and introduced me to major frameworks. I also learned to cooperate in a team, and other communicational skills.`,
-      buttons: [
-      ],
+      buttons: [],
     },
     {
       title: "Comission: Fotoclub Borger-odoorn",
@@ -79,7 +71,6 @@ export class AboutComponent {
       text: "NIO is the dutch olympiad of informatics, a contest for informatica students in secondary school. My school does not offer informatica as a subject, but thanks to the Honours Programme (see above) i can self study informatica and still participate in the olympiad. Around 350 students participate in the first round of the olympiad each year, from which 100 can enter the second round. Both of the times I participated in round one I also participated in round two, but i was not able to get to the third round and international competitions."
     }
   ]
-
   languages = [
     {
       lang: "Java",
@@ -178,4 +169,10 @@ export class AboutComponent {
       ]
     }
   ]
+
+  constructor(
+    utilsService: UtilsService
+  ) {
+    this.scrollTo = utilsService.scrollTo
+  };
 }

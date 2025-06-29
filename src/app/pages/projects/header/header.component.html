@@ -1,19 +1,21 @@
 <header>
 
-    <div class="header-content">
-        <div class="header-text">
-            <h1 class="mat-h1">My projects</h1>
-            <p>A list of all the projects related to software engineering I have done in my career. Most projects have their source code
-                available for inspection, forking or even code contribution of you want. All projects have a link to a working "product", 
-                varying from a website, a minecraft mod or a cli tool to a selfhostable app.
-            </p>
-        </div>
-        <div class="header-buttons">
-            <a mat-flat-button color="primary" (click)="scrollTo('projects-mount')" id="projects-mount">
-                <mat-icon>expand_more</mat-icon>
-                My projects
-            </a>
-        </div>
+  <div class="header-content">
+    <div class="header-text">
+      <h1 class="mat-h1">My projects</h1>
+      <p>A list of all the projects related to software engineering I have done in my career. Most projects have their
+        source code
+        available for inspection, forking or even code contribution of you want. All projects have a link to a working
+        "product",
+        varying from a website, a minecraft mod or a cli tool to a selfhostable app.
+      </p>
     </div>
+    <div class="header-buttons">
+      <a (click)="scrollTo('projects-mount')" color="primary" id="projects-mount" mat-flat-button>
+        <mat-icon>expand_more</mat-icon>
+        My projects
+      </a>
+    </div>
+  </div>
 
 </header>

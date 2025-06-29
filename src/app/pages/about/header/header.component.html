@@ -1,20 +1,22 @@
 <header>
 
-    <div class="header-content">
-        <div class="header-text">
-            <h1 class="mat-h1">About me</h1>
-            <p>My developer pseudonym is MrStickyPiston, based on the minecraft Sticky Piston block. In minecraft you can do a lot of interesting things using the Sticky Piston, just like i can do a lot of interesting things using my coding and artistic skills.</p>
-        </div>
-        <div class="header-buttons">
-            <a mat-flat-button color="primary" (click)="scrollTo('more-info-mount')" id="more-info-mount">
-                <mat-icon>expand_more</mat-icon>
-                More info
-            </a>
-            <a mat-flat-button color="primary" href="https://github.com/MrStickyPiston" target="_blank">
-                <mat-icon>code</mat-icon>
-                Github profile
-            </a>
-        </div>
+  <div class="header-content">
+    <div class="header-text">
+      <h1 class="mat-h1">About me</h1>
+      <p>My developer pseudonym is MrStickyPiston, based on the minecraft Sticky Piston block. In minecraft you can do a
+        lot of interesting things using the Sticky Piston, just like i can do a lot of interesting things using my
+        coding and artistic skills.</p>
     </div>
+    <div class="header-buttons">
+      <a (click)="scrollTo('more-info-mount')" color="primary" id="more-info-mount" mat-flat-button>
+        <mat-icon>expand_more</mat-icon>
+        More info
+      </a>
+      <a color="primary" href="https://github.com/MrStickyPiston" mat-flat-button target="_blank">
+        <mat-icon>code</mat-icon>
+        Github profile
+      </a>
+    </div>
+  </div>
 
 </header>

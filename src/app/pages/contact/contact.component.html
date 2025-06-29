@@ -2,86 +2,85 @@
 
 <div class="page-content">
 
-    <div class="content-block">
-        <mat-stepper orientation="vertical" [linear]="true">
-            <mat-step [stepControl]="nameFormGroup" label="Name">
-                <form [formGroup]="nameFormGroup">
+  <div class="content-block">
+    <mat-stepper [linear]="true" orientation="vertical">
+      <mat-step [stepControl]="nameFormGroup" label="Name">
+        <form [formGroup]="nameFormGroup">
 
-                    <mat-form-field>
-                        <mat-label>First name</mat-label>
-                        <input matInput formControlName="first" required>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Middle name(s)</mat-label>
-                        <input matInput formControlName="middle">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Surname</mat-label>
-                        <input matInput formControlName="last" required>
-                    </mat-form-field>
+          <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input formControlName="first" matInput required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Middle name(s)</mat-label>
+            <input formControlName="middle" matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Surname</mat-label>
+            <input formControlName="last" matInput required>
+          </mat-form-field>
 
-                    <div>
-                        <button mat-flat-button color="primary" matStepperNext>Next</button>
-                    </div>
+          <div>
+            <button color="primary" mat-flat-button matStepperNext>Next</button>
+          </div>
 
-                </form>
-            </mat-step>
-            <mat-step [stepControl]="mailFormGroup" label="Email">
-                <form [formGroup]="mailFormGroup">
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="mailFormGroup" label="Email">
+        <form [formGroup]="mailFormGroup">
 
-                    <mat-form-field>
-                        <mat-label>Email</mat-label>
-                        <input matInput formControlName="email" type="email" required>
-                    </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput required type="email">
+          </mat-form-field>
 
-                    <div>
-                        <button mat-flat-button color="primary" matStepperPrevious>Back</button>
-                        <button mat-flat-button color="primary" matStepperNext>Next</button>
-                    </div>
-                </form>
-            </mat-step>
-            <mat-step [stepControl]="messageFormGroup" label="Message">
-                <form [formGroup]="messageFormGroup">
+          <div>
+            <button color="primary" mat-flat-button matStepperPrevious>Back</button>
+            <button color="primary" mat-flat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="messageFormGroup" label="Message">
+        <form [formGroup]="messageFormGroup">
 
-                    <mat-form-field>
-                        <mat-label>Subject</mat-label>
-                        <input matInput formControlName="subject" required>
-                    </mat-form-field>
-                    <mat-form-field id="message-field">
-                        <mat-label>Message</mat-label>
-                        <textarea matInput formControlName="message" required maxlength="2048"></textarea>
-                    </mat-form-field>
+          <mat-form-field>
+            <mat-label>Subject</mat-label>
+            <input formControlName="subject" matInput required>
+          </mat-form-field>
+          <mat-form-field id="message-field">
+            <mat-label>Message</mat-label>
+            <textarea formControlName="message" matInput maxlength="2048" required></textarea>
+          </mat-form-field>
 
-                    <div>
-                        <button mat-flat-button color="primary" matStepperPrevious>Back</button>
-                        <button mat-flat-button color="primary" matStepperNext>Next</button>
-                    </div>
-                </form>
-            </mat-step>
-            <mat-step label="Confirm">
-                <ng-template matStepLabel>Confirm</ng-template>
+          <div>
+            <button color="primary" mat-flat-button matStepperPrevious>Back</button>
+            <button color="primary" mat-flat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step label="Confirm">
+        <ng-template matStepLabel>Confirm</ng-template>
 
-                @if (nameFormGroup.valid && mailFormGroup.valid && messageFormGroup.valid){
-                    <p><b>Please check if the info below is correct before submitting.</b></p>
-                    <p class="prewrap">Name: {{getName()}}
-Email: {{mailFormGroup.get('email')?.value}}
-Subject: {{messageFormGroup.get('subject')?.value}}
-Mesage:</p>
-                    <p id="form-message" class="prewrap">{{messageFormGroup.get('message')?.value!.trim()}}</p>
+        @if (nameFormGroup.valid && mailFormGroup.valid && messageFormGroup.valid) {
+          <p><b>Please check if the info below is correct before submitting.</b></p>
+          <p class="prewrap">Name: {{ getName() }}
+            Email: {{ mailFormGroup.get('email')?.value }}
+            Subject: {{ messageFormGroup.get('subject')?.value }}
+            Mesage:</p>
+          <p id="form-message" class="prewrap">{{ messageFormGroup.get('message')?.value!.trim() }}</p>
 
-                    <div>
-                        <button mat-flat-button color="primary" matStepperPrevious>Back</button>
-                        <button mat-flat-button color="primary" (click)="submit()">Submit</button>
-                    </div>
-                }
-                @else {
-                    <p>Please fill in the form correctly before submitting.</p>
-                    <div>
-                        <button mat-flat-button color="primary" matStepperPrevious>Back</button>
-                    </div>
-                }
-                
-            </mat-step>
-        </mat-stepper>
-    </div>
+          <div>
+            <button mat-flat-button color="primary" matStepperPrevious>Back</button>
+            <button mat-flat-button color="primary" (click)="submit()">Submit</button>
+          </div>
+        } @else {
+          <p>Please fill in the form correctly before submitting.</p>
+          <div>
+            <button mat-flat-button color="primary" matStepperPrevious>Back</button>
+          </div>
+        }
+
+      </mat-step>
+    </mat-stepper>
+  </div>
 </div>

@@ -1,28 +1,27 @@
-import { IMAGE_CONFIG, NgOptimizedImage, provideCloudinaryLoader } from '@angular/common';
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ProjectPageHeaderComponent } from "./header/header.component";
-import { platform } from 'os';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { E404Component } from '../../error/e404/e404.component';
+import {NgOptimizedImage, provideCloudinaryLoader} from '@angular/common';
+import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ProjectPageHeaderComponent} from "./header/header.component";
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {E404Component} from '../../error/e404/e404.component';
 
 @Component({
-    selector: 'app-project-page',
-    imports: [
-        NgOptimizedImage,
-        ProjectPageHeaderComponent,
-        MatButtonModule,
-        MatIconModule,
-        MatChipsModule,
-        E404Component
-    ],
-    templateUrl: './project-page.component.html',
-    styleUrl: './project-page.component.scss',
-    providers: [
-        provideCloudinaryLoader('https://res.cloudinary.com/dvtmkwimv/'),
-    ]
+  selector: 'app-project-page',
+  imports: [
+    NgOptimizedImage,
+    ProjectPageHeaderComponent,
+    MatButtonModule,
+    MatIconModule,
+    MatChipsModule,
+    E404Component
+  ],
+  templateUrl: './project-page.component.html',
+  styleUrl: './project-page.component.scss',
+  providers: [
+    provideCloudinaryLoader('https://res.cloudinary.com/dvtmkwimv/'),
+  ]
 })
 
 export class ProjectPageComponent {
@@ -34,7 +33,8 @@ export class ProjectPageComponent {
 
   error_404: boolean = false
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -190,8 +190,8 @@ export class ProjectPageComponent {
                   {
                     type: ItemType.Buttons,
                     buttons: [
-                      
-                      
+
+
                       {
                         url: 'https://flathub.org/apps/io.github.mrstickypiston.stickyhours',
                         text: 'Sticky Hours Flatpak (Flathub)',
