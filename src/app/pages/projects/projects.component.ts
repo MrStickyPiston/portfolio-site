@@ -17,7 +17,43 @@ import {HeaderComponent} from "./header/header.component";
 })
 export class ProjectsComponent {
   projects = [
-    {},
+    {
+      title: 'Ancient Greek Analysis',
+      subtitle: 'A program that automatically analyzes ancient greek',
+
+      banner: 'https://res.cloudinary.com/dvtmkwimv/image/upload/v1751208999/Screenshot_2025-06-29_at_16-56-29_Ancient_Greek_Analysis_y7wod1.png',
+      banner_alt: 'Ancient Greek Analysis web version home screen screenshot',
+      text: 'Languages can be complex, especially when many cases, amounts, genders, voices, etc. are involved. To be able to analyze the grammatical meaning of a word it is required to apply all rules, something that will cause many human errors. Computers are exact however, and when enough data is supplied no errors should be made. This project tries to reduce the amount of required data to perform flawless analysis of any ancient greek word. This amount got small enough to allow client side in browser analysis.',
+
+      buttons: [
+        {
+          url: "https://codeberg.org/MrStickyPiston/ancient-greek-analysis",
+          text: "source",
+          icon: "code"
+        },
+        {
+          url: "https://ancient-greek-analysis-dev-web.pages.dev",
+          text: "Site (based on wiktionary data)",
+          icon: "web"
+        }
+      ]
+    },
+    {
+      title: 'Actix Web Example',
+      subtitle: 'An example web server application written in rust.',
+
+      banner: "https://res.cloudinary.com/dvtmkwimv/image/upload/f_auto,q_auto,w_3840/Screenshot_2025-06-29_at_16-26-24_User_Management_System_v22srw.png",
+      banner_alt: "Actix Web Example dynamic user management admin panel screen screenshot",
+      text: "This project is an example web server application, which can be build upon later. The main goal of this project was getting used to writing high performance rust webservers. All features are fully functional and implemented for both the backend and the frontend. The features include an user management and authentication system. ",
+
+      buttons: [
+        {
+          url: "https://codeberg.org/MrStickyPiston/actix-web-example",
+          text: "source",
+          icon: "code"
+        }
+      ]
+    },
     {
       icon: 'https://flathub.org/_next/image?url=https%3A%2F%2Fdl.flathub.org%2Fmedia%2Fio%2Fgithub%2Fmrstickypiston.stickyhours%2Feb18c196950dc036186d6f0326384d9b%2Ficons%2F128x128%2Fio.github.mrstickypiston.stickyhours.png&w=128&q=100',
       title: 'Sticky Hours',
@@ -86,7 +122,7 @@ export class ProjectsComponent {
 
       banner: '/assets/CGBNvote_banner.png',
       banner_alt: 'Project CGBNvote voting website admin panel',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus orci non nulla scelerisque eleifend. Fusce non sodales lorem. Praesent aliquet nulla ac iaculis varius. Quisque venenatis, augue scelerisque vehicula luctus, augue justo posuere ex, convallis tempor sem dui vitae ex. Nam suscipit leo libero, at tincidunt erat ultricies quis. Aliquam et congue eros, vitae suscipit eros. Aenean varius dui nunc, vitae facilisis massa semper ac. Sed sed purus vitae lorem aliquam hendrerit et id dui. Quisque sagittis pellentesque quam, in pharetra tellus ultricies sed. ',
+      text: 'This program has been developed for digitally voting at my secondary school. The most important aspects are security and anonymity. Security is accomplished by sending a verification code to the unique school mail address of the voter, and anonymity by only deactivating the code when the voter has voted and counting a vote to the chosen candidate, but not linking those events together. For more details, take a look at the source code.',
 
       buttons: [
         {
