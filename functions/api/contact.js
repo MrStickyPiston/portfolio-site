@@ -30,53 +30,23 @@ export const onRequestPost = async (data) => {
         });
     }
 
-    // Prepare the Discord webhook payload
-    const discordPayload = {
-        "content": null,
-        "embeds": [
-            {
-                "title": contactInfo.subject,
-                "color": 4054148,
-                "fields": [
-                    {
-                        "name": "Name",
-                        "value": `${contactInfo.name}`
-                    },
-                    {
-                        "name": "Email",
-                        "value": `${contactInfo.email}`
-                    },
-                    {
-                        "name": "Subject",
-                        "value": `${contactInfo.subject}`
-                    },
-                ],
-                "description": `${contactInfo.message}`,
-                "timestamp": new Date().toISOString()
-            }
-        ],
-        "username": `Contact`,
-        "attachments": []
+    const body = {
+     "subject": `${contactInfo.subject} - ${contactInfo.email}`,
+      "text": `From: ${contactInfo.name} (${contactInfo.email})` ++ `\nIp ${data.request.headers['x-real-ip']}` ++ "\n\n" ++ contactInfo.message
     }
 
-    if (data.request.headers['x-real-ip'] != null) {
-        discordPayload.embeds[0].footer = {
-            text: `Submitted from ${data.request.headers['x-real-ip']}`
-        }
-    }
-
-    const webhookUrl = data.env.CONTACT_WEBHOOK;
+    const Url = data.env.CONTACT_URL;
 
     try {
-        const webhookResponse = await fetch(webhookUrl, {
+        const response = await fetch(Url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(discordPayload),
+            body: JSON.stringify(body),
         });
 
-        if (!webhookResponse.ok) {
+        if (!response.ok) {
             return new Response(JSON.stringify({ error: "Message could not be delivered: error response" }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
