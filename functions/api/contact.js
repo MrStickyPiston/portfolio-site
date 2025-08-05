@@ -32,7 +32,7 @@ export const onRequestPost = async (data) => {
 
     const body = {
      "subject": `${contactInfo.subject} - ${contactInfo.email}`,
-      "text": `From: ${contactInfo.name} (${contactInfo.email})` + `\nIp ${data.request.headers['x-real-ip']}` + "\n\n" + contactInfo.message
+      "text": `From: ${contactInfo.name} (${contactInfo.email})` + `\nIp ${data.request.headers['CF-Connecting-IP']}` + "\n\n" + contactInfo.message
     }
 
     const Url = data.env.CONTACT_URL;
